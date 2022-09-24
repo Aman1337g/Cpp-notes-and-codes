@@ -8,3 +8,9 @@ int main() {               // <------ main function (entry point) , int is the r
 /* In the header file "iostream" we imported, there is 'cout' function in the standard namespace  
 so we writing "using namespace std;" or else we can write "std::cout" , (::) => scope resolution operator
 */
+
+/* 
+Output
+
+Hello World
+*/

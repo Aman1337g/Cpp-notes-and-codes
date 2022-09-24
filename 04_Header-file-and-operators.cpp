@@ -43,3 +43,34 @@ int main() {
 
     return 0;
 }
+
+/*
+OUTPUT
+
+Operators in C++:
+Following are the operators in C++:
+
+Arithmetic Operators:
+a = 3, b = 8
+a + b = 11
+a - b = -5
+a * b = 24
+a / b = 0
+a % b = 3
+a++ = 3
+++b = 8
+
+Comparison Operators:
+a = 3, b = 8
+a == b = 0
+a != b = 1
+a <= b = 1
+a >= b = 0
+a < b = 1
+a > b = 0
+
+Logical Operators : a = 3, b = 8
+((a==b) && (a<b)) = 0
+((a>b) || (a<b)) = 1
+!((a>b) || (a<b)) = 0
+*/

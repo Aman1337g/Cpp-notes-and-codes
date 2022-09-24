@@ -8,3 +8,11 @@ int main() {
     cout<<"Sum of "<<n1<<" and "<<n2<<" is : "<<n1+n2;
     return 0;
 }
+
+/*
+OUTPUT
+
+Enter n1 and n2 : 
+45 5
+Sum of 45 and 5 is : 50
+*/

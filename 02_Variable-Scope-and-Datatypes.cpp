@@ -29,3 +29,17 @@ int main() {   // program starts from here
     cout<<"Global value of glo : "<<::glo;  // '::' --> using scope resolution operator before the variable will give its global value
     return 0;
 }
+
+/*
+OUTPUT
+
+Value of a is 5. Value of b is 8.
+Value of pi is : 3.14157
+Value of c is : A
+Value of glo is : 89
+
+Value of b is : 1
+Value of e is : 0
+86
+Global value of glo : 98
+*/
