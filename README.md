@@ -68,7 +68,7 @@ For example -
 - No spaces or special characters are allowed.
 - You cannot use a C++ keyword (a reserved word) as a variable name.
 
-### Basic input/output in C++
+## 04 - Basic input/output in C++
 
 - C++ comes with libraries which helps us in performing input/output. In C++ sequence of bytes corresponding to input and output are commonly known as **streams**.
 - **Input Stream**: Direction of flow of bytes takes place from input device (eg.- Keyboard) to the main memory.
@@ -97,3 +97,58 @@ For example -
 | double | 8 | -2^63 to (2^63)-1
 | long double | 12 | -2^95 to (2^95)-1
 | wchar_t | 2 or 4 | 1 wide character
+
+## 05 - Operators in C++
+
+1. Arithmetic operators ( +, -, *, /, % )
+2. Assignment operator (=)
+3. Compound assignment (+=, -=, *=, /=, %=, >>=, <<=, &=, ^=, |=)
+4. Increment and decrement (++, --)
+5. Relational and comparison operators ( ==, !=, >, <, >=, <= )
+6. Logical operators ( !, &&, || )
+7. Conditional ternary operator ( ? )
+8. Comma operator ( , )
+9. Bitwise operators ( &, |, ^, ~, <<, >> )
+
+> To get a list of operator precedence , go to - https://en.cppreference.com/w/cpp/language/operator_precedence
+
+## 06 - C++ Control Structures
+
+- Basic  Control Structure -                        
+1. Sequence Structure
+2. Selection Structure (if..else , if..else if..else , switch..case)
+3. Loop Structure (for , while , do...while)
+<hr>
+1. Sequence Structure ---> Entry ---> Action1 ---> Action2 ---> Exit<br>
+2. Selection Structure ---> Entry ---> Condition --> if true --> Action1 ---> if false --> Action2 ---> Exit<br>
+3. Loop Structure ---> Entry ---> Condition --> if true --> Action1 in loop until termination ---> if false --> Action2 ---> Exit <br>
+
+### Loops in C++
+
+There are three types of loops in C++:
+1. For Loop
+2. While Loop
+3. do-While Loop
+
+**for Loop Syntax :**
+```cpp
+for(initialization; condition; updation) {
+    loop body(C++);
+}
+```
+
+**while Loop Syntax :**
+```cpp
+while(condition) {
+    statements;
+}
+```
+
+**do-while Loop Syntax :**
+```cpp
+do {  // atleast runs 1 time
+    statements;
+}while(condition);
+```
+
+
