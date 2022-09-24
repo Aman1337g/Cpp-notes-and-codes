@@ -4,8 +4,8 @@ using namespace std;
 int glo = 98;  // global variable
 
 void sum() {
-    // int glo = 86;
-    cout<<glo;
+    int glo = 86;  // local variable
+    cout<<glo<<endl;
 }
 int main() {   // program starts from here
     // int a = 5;
@@ -26,5 +26,6 @@ int main() {   // program starts from here
     cout<<"\nValue of b is : "<<d<<endl<<"Value of e is : "<<e<<endl;
 
     sum();
+    cout<<"Global value of glo : "<<::glo;  // '::' --> using scope resolution operator before the variable will give its global value
     return 0;
 }
