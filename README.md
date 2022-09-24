@@ -67,3 +67,33 @@ For example -
 - Variable names are case sensitive. eg. - means variable 'aman' and 'Aman' are two different things in C++.
 - No spaces or special characters are allowed.
 - You cannot use a C++ keyword (a reserved word) as a variable name.
+
+### Basic input/output in C++
+
+- C++ comes with libraries which helps us in performing input/output. In C++ sequence of bytes corresponding to input and output are commonly known as **streams**.
+- **Input Stream**: Direction of flow of bytes takes place from input device (eg.- Keyboard) to the main memory.
+- **Output Stream**: Direction of flow of bytes takes place from main memory to the output device (eg.- Display).
+
+### Data Type size and range in C++ (For G++ 64 BIT)
+
+- For n = size in bits (1 byte = 8 bits)
+- Range = -2^(n-1) to 2^(n-1)-1 (**for signed**) <br>      
+- Range = 0 to 2*(2^(n-1)-1) (**for unsigned**)
+
+| Data Type | Size (in Bytes) | Range 
+|---|---|---|
+| short int | 2 | -32,768 to 32,767
+| unsigned short int | 2 | 0 to 65,535
+| unsigned int | 2 | 0 to 4,294,967,295
+| int | 4 | -2,147,483,648 to 2,147,483,647
+| long int | 4 | -2,147,483,648 to 2,147,483,647
+| unsigned long int | 4 | 0 to 4,294,967,295
+| long long int | 8 | -2^(63) to 2^(63)-1
+| unsigned long long int | 8 | 0 to 2*(2^(63)-1)
+| signed char | 1 | -128 to 127
+| unsigned char | 1 | 0 to 255
+| unsigned char | 1 | 0 to 255
+| float | 4 | -2^31 to (2^31)-1 
+| double | 8 | -2^63 to (2^63)-1
+| long double | 12 | -2^95 to (2^95)-1
+| wchar_t | 2 or 4 | 1 wide character
