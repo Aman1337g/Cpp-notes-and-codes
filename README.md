@@ -157,3 +157,45 @@ do {  // atleast runs 1 time
 - Sometimes, a simple variable is not enough to hold all the data.
 - For example, lets say we want to store the marks of 2500 students, having 2500 different variables for this task is not feasible.
 - To solve this problem, we can define an array with size 2500 that can hold the marks of all students.
+
+## 08 - Why OOPS?
+
+- C++ language (initially called C with classes) was designd with the main intention of adding object-oriented features to C language.
+- As the size of the program increases, readability, maintainability and bug-free nature of programs decreases.
+- This was the major problem with languages like C which relied upon functions or procedures (hence the name procedural programming language).
+- As a result, the possibility of not addressing the problem in an effective manner was high.
+- Also, as data was almost neglected, data security was easily compromised.
+- Using classes solves this problem by modelling program as a real world scenario.
+
+### Procedure Oriented Programming 
+
+- Consists of writing a set of instruction for the computer to follow.
+- Main focus is on functions and not on flow of data.
+- Functions can either use local or global data.
+- Data moves openly from function to function.
+> Main focus is on functions.
+
+### Object Oriented Programming 
+
+- Works on he concept of calsses and objects.
+- A class is  a template to create objects.
+- Treats data as a critical element.
+- Decomposes the problem in objects and builds data and functions around the objects.
+> Main focus is on data.
+
+### Basic Concepts in Object Oriented Programming
+
+- Classes - Basic template for creating objects (Memory is not allocated until object is made).
+- Objects - Basic run time entities.
+- Data Abstraction & Encapsulation - Wrapping data and functions into single unit.
+- Inheritance - Properties of one class can be inherited into others.
+- Polymorphism - ability to take morethan one forms.
+- Dynamic Binding (OR late binding) - code which will execute is not known until the program runs.
+- Message Passing - Object.message(Information) call format.
+
+### Benefits Of Object Oriented Programming
+
+- Better code reusability using objects and inheritance.
+- Principle of data hiding helps build secure systems.
+- Multiple objects can co-exist without any interference.
+- Software complexity can be easily managed.
