@@ -199,3 +199,37 @@ do {  // atleast runs 1 time
 - Principle of data hiding helps build secure systems.
 - Multiple objects can co-exist without any interference.
 - Software complexity can be easily managed.
+
+### OOP Features
+
+**Overview**
+- Abstraction
+- Encapsulation
+- Inheritance
+- Polymorphism
+
+**Abstraction**
+
+> Providing essential features, but hiding the bacground details.
+
+A user is aware of the fact that what a user defined type is capable of doing. Or what are the functionalities attached to that UDT. But not aware of the fact that how these are implemented.<br>
+For example, **stack** as a UDT. We can **push** an element to the stack and **pop** an element from the stack. But the user cannot know how the stack is implemented. A stack may either be implemented with the help of a **linked list** or with an **array**.
+
+**Encapsulation**
+
+> The act of hiding information.
+
+All data access must occur through the public interface. Thus, the data fields of an object are effectively hidden from the user.<br>
+For example, inside a class member, variables are declared as private to restrict the direct access.
+
+**Inheritance**
+
+> A process thorough which a derived class acquires the properties of a base class.
+
+The concept of reusability comes from inheritance. We don't need to redeclare the properties of the base class again.
+
+**Polymorphism**
+
+> It is a combination of two words namely poly means **many** and morphs means **forms**.
+
+In OOPs, a function can take many forms according to different circumstances. Same function can behave differently with different signature. This polymorphic behavior can be **static** or **dynamic**.
