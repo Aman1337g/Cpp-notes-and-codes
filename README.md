@@ -200,7 +200,7 @@ do {  // atleast runs 1 time
 - Multiple objects can co-exist without any interference.
 - Software complexity can be easily managed.
 
-### OOP Features
+## 09 - OOP Features
 
 **Overview**
 - Abstraction
@@ -233,3 +233,12 @@ The concept of reusability comes from inheritance. We don't need to redeclare th
 > It is a combination of two words namely poly means **many** and morphs means **forms**.
 
 In OOPs, a function can take many forms according to different circumstances. Same function can behave differently with different signature. This polymorphic behavior can be **static** or **dynamic**.
+
+## 10 - Objects Memory Allocation in C++
+
+- The way memory is allocated to variables and functions of the class is different even though they both are from the same class.
+
+- The memory is only allocated to the variables of the class when the object is created. 
+- The memory is not allocated to the variables when the class is declared. 
+- At the same time, single variables can have different values for different objects, so every object has an individual copy of all the variables of the class.
+- Memory is allocated to the function only once when the class is declared. So the objects don’t have individual copies of functions only one copy is shared among each object.
