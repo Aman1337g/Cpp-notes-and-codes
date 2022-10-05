@@ -1,38 +1,38 @@
 #include<iostream>
 using namespace std;
 
-// Array of Objects
-class Employee {
-    string eid;
-    float salary;
-    public : 
-        void setId(void) {
-            salary = 28343.87;
-            cout<<"Enter the employee ID : ";
-            cin>>eid;
-        }
-        void getId(void) {
-            cout<<"Id of employee is : "<<eid<<endl<<endl;
-        }
-};
+// // Array of Objects
+// class Employee {
+//     string eid;
+//     float salary;
+//     public : 
+//         void setId(void) {
+//             salary = 28343.87;
+//             cout<<"Enter the employee ID : ";
+//             cin>>eid;
+//         }
+//         void getId(void) {
+//             cout<<"Id of employee is : "<<eid<<endl<<endl;
+//         }
+// };
 
-int main() {
-    // Employee shobhan, shubham, pratush, riya;
-    // shobhan.setId();
-    // shobhan.getId();     // if there are many employees working then we have to make array of objects 
+// int main() {
+//     // Employee shobhan, shubham, pratush, riya;
+//     // shobhan.setId();
+//     // shobhan.getId();     // if there are many employees working then we have to make array of objects 
 
-    Employee boat[4];
-    for(int i=0; i<4; i++) {
-        boat[i].setId();
-        boat[i].getId();
-    }
-    return 0;
-}
+//     Employee boat[4];
+//     for(int i=0; i<4; i++) {
+//         boat[i].setId();
+//         boat[i].getId();
+//     }
+//     return 0;
+// }
 
 // Passing objects as function argument
 
 class Complex {
-    int a;  int b;  static int count;
+    float a;  float b;  static int count;
     public: 
         float setData(void) {
             cout<<"Enter x : "; cin>>a;
