@@ -37,6 +37,8 @@ int main() {
     c3 = sumC(c1, c2);
     cout<<"\nAfter adding : "<<endl;
     c3.print();
+
+    return 0;
 }
 /*
     Properties of friend functions
