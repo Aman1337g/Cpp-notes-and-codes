@@ -2,33 +2,33 @@
 #include<math.h>
 using namespace std;
 
-// // Example 1
-// class Complex {
-//     int a, b;
-//     public:
-//         Complex(int, int);
-//         void print(void) {
-//             cout<<"Complex number : "<<a<<" + "<<b<<"i\n";
-//         }
-// };
+// Example 1
+class Complex {
+    int a, b;
+    public:
+        Complex(int, int);
+        void print(void) {
+            cout<<"Complex number : "<<a<<" + "<<b<<"i\n";
+        }
+};
 
-// Complex :: Complex(int x, int y) {      // -----> Parameterized Constructor as it takes 2 parameters
-//     a = x;
-//     b = y;
-// }
+Complex :: Complex(int x, int y) {      // -----> Parameterized Constructor as it takes 2 parameters
+    a = x;
+    b = y;
+}
 
-// int main() {
-//     // Implicit Call
-//     Complex a(32, 23);
-//     a.print();
+int main() {
+    // Implicit Call
+    Complex a(32, 23);
+    a.print();
 
-//     // Explicit Call
-//     Complex b = Complex(2, 3);
-//     b.print();
+    // Explicit Call
+    Complex b = Complex(2, 3);
+    b.print();
 
     
-//     return 0;
-// }
+    return 0;
+}
 
 
 // Example 2
