@@ -20,7 +20,7 @@ class Employee {
             cout<<"ID  : "<<id<<endl;
             cout<<"Name  : "<<name<<endl;
         }
-        static void getCount(void) {    // static member function - it can only access static variables and funcitons
+        static void getCount(void) {    // static member function - it can only access static variables and functions
             // cout<<id;    // shows error as it is not a static data member
             cout<<"The value of count is : "<<count<<endl<<endl;
         }
