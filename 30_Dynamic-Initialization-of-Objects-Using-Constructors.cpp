@@ -10,7 +10,7 @@ private:
     float returnValue;
 
 public:
-    BankDeposit(void) {}
+    BankDeposit(void) {}    // default Constructor
     BankDeposit(int p, int y, float r); // r can be a value like 0.04
     BankDeposit(int p, int y, int r);   // r can be a value like 14 in percentage
     void show();
