@@ -242,3 +242,35 @@ In OOPs, a function can take many forms according to different circumstances. Sa
 - The memory is not allocated to the variables when the class is declared. 
 - At the same time, single variables can have different values for different objects, so every object has an individual copy of all the variables of the class.
 - Memory is allocated to the function only once when the class is declared. So the objects don’t have individual copies of functions only one copy is shared among each object.
+
+## 11 - Inheritance In C++ - Overview
+
+- Reusablility is a very important feature of OOPs.
+- In C++ we can reuse a class and add additional features to it.
+- Reusing classes saves time and money.
+- Reusing already tested and debugged class will save a lot of effort of developing and debugging the same thing again.
+- Follow DRY (**D**o Not **R**epeat **Y**ourself) principle.
+
+### What is Inheritance In C++
+
+- The concept of Reusability in C++  is supported using Inheritance.
+- We can reuse the properties of an existing class by inheriting from it.
+- The existing class is called as the **Base Class**.
+- The new class which is inherited is called as the **Derived Class**.
+- Reusing classes saves time and money. 
+- There are different types of inheritance in C++.
+
+### Forms Of Inheritance In C++
+
+- **Single Inheritance** - A derived class with only one Base Class.(**One parent one children**)<br>e.g. -
+A ----> B , ```(---->) => derives```        ||        A <---- B , ```(<----) => is derived from``` . In various places different conventions are used, so don't get confused.
+
+- **Multiple Inheritance** - A derived class with more than one Base Class.(**More than one parent and one children**)
+
+- **Heirarchical Inheritance** - Several derived classes from a single base class.(**One parent and more than one children**)
+
+- **Multilevel Inheritance** - Deriving a class from already derived class.<br>e.g. - A ----> B ----> C , B = A + more.. and C = B + more..
+
+- **Hybrid Inheritance** - is a combination of ***multiple inheritance*** and ***multilevel inheritance***. 
+    - A class is derived from two classes as in multiple inheritance.
+    - However, one of the parent classes is not a base class.
