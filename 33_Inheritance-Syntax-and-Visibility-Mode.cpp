@@ -1,18 +1,19 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 // Base class
-class Employee {
-    private:
-        
-    public:
-        int id;
-        float salary;
-        Employee(int inpId) {
-            id = inpId;
-            salary = 3432.00;
-        }
-        Employee() {}
+class Employee
+{
+private:
+public:
+    int id;
+    float salary;
+    Employee(int inpId)
+    {
+        id = inpId;
+        salary = 3432.00;
+    }
+    Employee() {}
 };
 
 // Derived Class Syntax
@@ -29,25 +30,29 @@ NOTE:
 */
 
 // Creating a Programmer class derived from Employee Base Class
-class Programmer : Employee {   // When we make a derived class , automatically default constructor of base class is called so we have to make a default class also
-    public: 
-        string languageCode;
-        Programmer(int inpId) {
-            id = inpId;
-            languageCode = "C, C++";
-        }
-         
-        void getData() {
-            cout<<id<<endl;
-        }
+class Programmer : Employee
+{ // When we make a derived class , automatically default constructor of base class is called so we have to make a default constructor also
+public:
+    string languageCode;
+    Programmer(int inpId)
+    {
+        id = inpId;
+        languageCode = "C, C++";
+    }
+
+    void getData()
+    {
+        cout << id << endl;
+    }
 };
 
-int main() {
+int main()
+{
     Employee roshan(46), shobhan(55);
-    cout<<roshan.salary<<endl;
-    cout<<shobhan.salary<<endl;
+    cout << roshan.salary << endl;
+    cout << shobhan.salary << endl;
     Programmer skillF(6);
-    cout<<skillF.languageCode<<endl;
+    cout << skillF.languageCode << endl;
     skillF.getData();
     // cout<<skillF.id;    // This will not work if inherited privately , only work for - " class Programmer : public Employee "
 
