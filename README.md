@@ -10,6 +10,8 @@
     - 2014 -> C++14
     - 2017 -> C++17
 
+<br>
+
 ## 02 - Variables & Comments in C++
 
 - A variable is a container to hold data.<br> 
@@ -44,6 +46,8 @@ For example -
 */
 ```
 
+<br>
+
 ## 03 - Variable Scope and Data Types in C++
 
 - Scope of a variable is the region in code where the existence of variable is valid.
@@ -67,6 +71,8 @@ For example -
 - Variable names are case sensitive. eg. - means variable 'aman' and 'Aman' are two different things in C++.
 - No spaces or special characters are allowed.
 - You cannot use a C++ keyword (a reserved word) as a variable name.
+
+<br>
 
 ## 04 - Basic input/output in C++
 
@@ -98,6 +104,8 @@ For example -
 | long double | 12 | -2^95 to (2^95)-1
 | wchar_t | 2 or 4 | 1 wide character
 
+<br>
+
 ## 05 - Operators in C++
 
 1. Arithmetic operators ( +, -, *, /, % )
@@ -111,6 +119,8 @@ For example -
 9. Bitwise operators ( &, |, ^, ~, <<, >> )
 
 > To get a list of operator precedence , go to - https://en.cppreference.com/w/cpp/language/operator_precedence
+
+<br>
 
 ## 06 - C++ Control Structures
 
@@ -151,12 +161,16 @@ do {  // atleast runs 1 time
 }while(condition);
 ```
 
+<br>
+
 ## 07 - Arrays in C++
 
 - An array is a collection of items of similar type stored in contiguous memory locations.
 - Sometimes, a simple variable is not enough to hold all the data.
 - For example, lets say we want to store the marks of 2500 students, having 2500 different variables for this task is not feasible.
 - To solve this problem, we can define an array with size 2500 that can hold the marks of all students.
+
+<br>
 
 ## 08 - Why OOPS?
 
@@ -200,6 +214,8 @@ do {  // atleast runs 1 time
 - Multiple objects can co-exist without any interference.
 - Software complexity can be easily managed.
 
+<br>
+
 ## 09 - OOP Features
 
 **Overview**
@@ -234,6 +250,8 @@ The concept of reusability comes from inheritance. We don't need to redeclare th
 
 In OOPs, a function can take many forms according to different circumstances. Same function can behave differently with different signature. This polymorphic behavior can be **static** or **dynamic**.
 
+<br>
+
 ## 10 - Objects Memory Allocation in C++
 
 - The way memory is allocated to variables and functions of the class is different even though they both are from the same class.
@@ -242,6 +260,8 @@ In OOPs, a function can take many forms according to different circumstances. Sa
 - The memory is not allocated to the variables when the class is declared. 
 - At the same time, single variables can have different values for different objects, so every object has an individual copy of all the variables of the class.
 - Memory is allocated to the function only once when the class is declared. So the objects don’t have individual copies of functions only one copy is shared among each object.
+
+<br>
 
 ## 11 - Inheritance In C++ - Overview
 
@@ -274,5 +294,36 @@ A ----> B , ```(---->) => derives```        ||        A <---- B , ```(<----) => 
 - **Hybrid Inheritance** - is a combination of ***multiple inheritance*** and ***multilevel inheritance***. 
     - A class is derived from two classes as in multiple inheritance.
     - However, one of the parent classes is not a base class.
+
+<br>
+
+## 12 - Constructors In Derived Classes
+
+- We can use contructors in derived classes in C++.
+- If base class constructor does not have any arguments, there is no need of any constructor in derived class. 
+- But if there are one or more arguments in the base class constructor, derived class need to pass arguments to the base class constructor.
+- If both base and derived classes have constructors, base class constructor is executed first.
+
+### Constructors In Multiple Inheritance
+
+- In multiple inheritance, base classes are constructed in the order in which they appear in the class declaration.
+- In multilevel inheritance, the constructors are executed in the order of inheritance.
+
+### Special Syntax
+
+- C++ supports an special syntax for passing arguments to multiple base classes.
+- The constructor of the derived class receives all the arguments at once and then will pass the calls to the respective base classes.
+- The body is called after all the construcotrs are finished executing.
+```cpp
+Derived-Constructor(arg1, arg2, arg3,...) : Base1-Constructor(arg1, arg2), Base2-Constructor(arg3, arg4) {
+    // Statements
+} Base1-Constructor(arg1, arg2)
+```
+
+### Special Case Of Virtual Base Class
+
+- The constructors for virtual base classes are invoked before an non-virtual base class.
+- If there are multiple virutal base classes, they are invoked in the order declared.
+- Any non-virtual base class are then constructed before the derived class constructor is executed.
 
 <br>
