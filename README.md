@@ -274,3 +274,5 @@ A ----> B , ```(---->) => derives```        ||        A <---- B , ```(<----) => 
 - **Hybrid Inheritance** - is a combination of ***multiple inheritance*** and ***multilevel inheritance***. 
     - A class is derived from two classes as in multiple inheritance.
     - However, one of the parent classes is not a base class.
+
+<br>
