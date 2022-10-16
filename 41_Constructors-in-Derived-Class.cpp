@@ -15,6 +15,8 @@ Case3:
 class A: public B, virtual public C {
     // Order of execution of constructor -> C() then B() then A();
 };
+
+// For more details - https://bit.ly/3s0huQa
 */
 class Base1 {
     int data1;        
