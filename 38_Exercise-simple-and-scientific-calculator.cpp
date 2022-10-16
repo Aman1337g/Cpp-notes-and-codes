@@ -9,10 +9,10 @@ Creatd 2 classes:
        operation of your choice and displays the results using another function.
 
     Create another class HybridCalculator and inherit it using these 2 classes:
-    Q1. What type of Inheritance are you using?
-    Q2. Which mode of Inheritance are you using?
+    Q1. What type of Inheritance are you using? ---> Multiple Inheritance
+    Q2. Which mode of Inheritance are you using? ---> Public for both SimpleCalculator and ScientificCalculator Class
     Q3. Create an object of HybridCalculator and display results of simple and scientific calculator.
-    Q4. How is ocde reusability implemented?
+    Q4. How is code reusability implemented?
 */
 class SimpleCalculator
 {
