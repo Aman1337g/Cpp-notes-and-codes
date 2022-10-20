@@ -353,3 +353,17 @@ In the run-time polymorphism, the compiler doesn’t know already what will happ
 
 1. Virtual Function
 A function that is in the parent class but redefined in the child class is called a virtual function. “virtual” keyword is used to declare a virtual function.
+
+<br>
+
+## 13 - Abstract Base Class & Pure Virtual Functions in C++
+
+**Pure Virtual Functions in C++**
+
+Pure virtual function is a function that doesn’t perform any operation and the function is declared by assigning the value 0 to it. Pure virtual functions are declared in abstract classes.
+
+**Abstract Base Class in C++**
+
+Abstract base class is a class that has at least one pure virtual function in its body. The classes which are inheriting the base class must need to override the virtual function of the abstract class otherwise compiler will throw an error.
+
+<br>
