@@ -1,0 +1,1 @@
+This is a sample text file for 53_Reading-and-Writing-Files.cpp in our Cpp-notes-and-code repository. 
