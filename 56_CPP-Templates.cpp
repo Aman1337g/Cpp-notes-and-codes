@@ -120,3 +120,63 @@ OUTPUT
 877.474
 
 */
+
+// Adding integer and float numbers
+#include <iostream>
+using namespace std;
+
+template <class T>
+class Add
+{
+    T a, b;
+
+public:
+    void setData()
+    {
+        T x, y;
+        a = x;
+        b = y;
+        cout << "Enter a : ";
+        cin >> a;
+        cout << "Enter b : ";
+        cin >> b;
+    }
+    T add()
+    {
+        return a + b;
+    }
+    void Display()
+    {
+        cout << "Addition of " << a << " and " << b << " : ";
+    }
+};
+
+int main()
+{
+    cout << "Addition for integer datatype : " << endl;
+    Add<int> sumInt;
+    sumInt.setData();
+    sumInt.Display();
+    cout << sumInt.add();
+
+    cout << "\n\nAddition for float datatype : " << endl;
+    Add<float> sumFloat;
+    sumFloat.setData();
+    sumFloat.Display();
+    cout << sumFloat.add();
+
+    return 0;
+}
+/*
+OUTPUT
+
+Addition for integer datatype :
+Enter a : 1
+Enter b : 4
+Addition of 1 and 4 : 5
+
+Addition for float datatype :
+Enter a : 23.2
+Enter b : 1.1
+Addition of 23.2 and 1.1 : 24.3
+*/
