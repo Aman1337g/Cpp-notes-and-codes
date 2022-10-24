@@ -394,7 +394,7 @@ It is called generic, because it is sufficient to declare a template once, it be
 
 Refer to the schematic below:
 
-![vector](images/vector.jpg)
+![vector](vector.jpg)
 
 We had to copy the same thing again and again for different data types, but a template solves it all. Refer to the syntax section for how.
 
@@ -484,7 +484,7 @@ Iterators are objects which refer to an element in a container. And we handle th
 
 I’ll give you a quick illustration of how they work combinedly.
 
-![STL](images/STL.jpg)
+![STL](STL.jpg)
 
 **Figure 1: Illustration of how these three components work together**
 
