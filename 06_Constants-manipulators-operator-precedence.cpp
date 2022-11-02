@@ -10,7 +10,7 @@ int main() {
     //********** Constants in C++ **********
     // const int b = 89;
     // cout<<"b was : "<<b<<endl;
-    // b = 57;  // get and error as 'a' is now a constant
+    // b = 57;  // get and error as 'b' is now a constant
     // cout<<"Now, b is : "<<b<<endl;
 
     // ********** Manipulators in C++ **********
