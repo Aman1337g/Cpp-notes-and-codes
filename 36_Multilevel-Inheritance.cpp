@@ -60,7 +60,7 @@ int main()
     Notes :
         If we are inheriting B from A and C from B : [A--->B--->C]
         1. A is the base class for B and B is the base class for C.
-        2. A--->B--->C si called Inheritance Path.
+        2. A--->B--->C is called Inheritance Path.
     */
     Result aman;
     aman.set_roll_number(420);
