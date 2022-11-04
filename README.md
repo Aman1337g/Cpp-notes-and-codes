@@ -1,22 +1,201 @@
-# NOTES
+# TABLE OF CONTENTS
 
-## 01 - Introduction to C++
+1. Introduction
+    - [C++ Overview](#11-c-overview)
+    - [Getting Started with C++](#12-getting-started-with-c)
+    - [Basic Structure & Syntax](#13-basic-structure--syntax)
+    - [C++ Comments](#14-c-comments)
+    - [C++ Variables](#15-c-variables)
+2. C++ Data Types, Operators & User I/O
+    - [C++ Data Types & Constants](#21-c-data-types--constants)
+    - [C++ Operators](#22-c-operators)
+    - [C++ Manipulators](#23-c-manipulators)
+    - [C++ Basic Input/Output](#24-c-basic-inputoutput)
+3. C++ Conditional Statements
+    - [Control Structure](#31-control-structure)
+    - [C++ If Else](#32-c-if-else)
+    - [C++ Switch Case](#33-c-switch-case)
+4. C++ Iteration Statements
+    - [C++ Loops](#41-c-loops)
+    - [For Loop](#42-for-loop)
+    - [While Loop](#43-while-loop)
+    - [Do While Loop](#44-do-while-loop)
+5. C++ Break/Continue
+    - [Break Statment](#51-break-statment)
+    - [Continue Statement](#52-continue-statement)
+6. C++ Arrays
+    - [Array Basics](#61-array-basics)
+    - [Array Operations](#62-array-operations)
+7. C++ Pointers
+    - [Operation on Pointers](#71-operation-on-pointers)
+8. C++ Strings
+    - [Strings](#81-strings)
+9. C++ Structures, Unions & Enums
+    - [Structures](#91-structures)
+    - [Unions](#92-unions)
+    - [Enums](#93-enums)
+
+# 1. Introduction
+
+## 1.1. C++ Overview
+
+<br>
+
+### **What is C++ ?**
 
 - C++ -> 1979 -> Bjarne Stroustrup -> Extension of C
-- C++ : fast programs , more control over system resources + memory management
-- High performance
+- C++ : fast programs, cross-platform, more control over system resources + memory management
+- Used to create high performance applications and software systems.
 - Major updates
     - 2011 -> C++11
     - 2014 -> C++14
     - 2017 -> C++17
 
+### **Why should we learn C++/ Features of C++?**
+
+- C++ is one of the world's most popular programming languages.
+- Widely used in - operating systems, GUIs, and embedded systems etc.
+- C++ is an object-oriented programming language that gives a clear structure to programs and allows code to be reused, lowering development costs.
+- With C++, you can develop applications or heavy games that can run on different platforms.
+- It is close to other programming languages - C# , Java , which makes it easy for programmers to switch to C++ or vice versa while it is actually very easy to learn.
+
+### **How is it different from C?**
+
+- The syntax of C++ is almost identical to that of C, as C++ was developed as an extension of C.
+- In contrast to C, C++ supports classes and objects, while C does not.
+
 <br>
+
+## 1.2. Getting Started with C++
+
+<br>
+
+### **Requirements before you start**
+
+- To start using C++, you need two things:
+- A text editor, like Notepad, or an IDE, like VSCode to act as a platform for you to write C++ code.
+- A compiler, like GCC->translate C++-code (high-level-language)->low-level language (machine-language) that the computer will understand.
+
+### **What is an IDE?**
+- IDE stands for Integrated Development Environment. 
+- It is nothing more than an enhanced version of a text editor that helps you write more efficient and nicer code. 
+- It helps to differentiate different parts of your codes with different colors and notifies you if you are missing some semicolon or bracket at some place by highlighting that area.
+- A lot of IDEs are available, such as DEVC++ or Code Blocks, but I will prefer using VS Code.
+
+### **Installing VSCode**
+
+- Visit https://code.visualstudio.com/download
+- Click on the download option as per your operating system.
+- After the download is completed, open the setup and run it by saving VS Code in the default location. 
+- You will need to click the next button again and again until the installation process begins.
+- Check all the boxes to open VS code in any directory.
+[!VS code setup checkbox](/Images/check.jpg)
+
+### **What is a Compiler?**
+
+- Used to run the program of a certain language which is generally high-level by converting the code into a language that is low-level that our computer could understand.
+- There are a lot of compilers available, but we will proceed with MinGW because it will fulfill all of our requirements, and also it is recommended by Microsoft itself.
+
+### **Setting up the compiler**
+- Visit https://code.visualstudio.com/docs/languages/cpp
+- Select C++ from the sidebar.
+- Choose “GCC via Mingw-w64 on Windows” from the options shown there.
+- Select the install sourceforge option.
+- After the downloading gets completed, run the setup and choose all the default options.
+
+### **Setting Path for Compiler**
+
+- Go to the C directory. Navigate into the Program Files. Then, open MinGW-64. Open MinGW-32. And then the bin folder. After reaching the bin, save the path or URL to the bin.
+- Then go to the properties of ‘This PC’.
+- Select ‘Advanced System Settings’.
+- Select the ‘Environment Variable’ option.
+- Then select System-variables->Path->Edit->New-> then paste the copied path.
+- And now,  you can visit your IDE and run your C++ programs on it. The configuration part is done.
+
+### **Writing your first code in C++**
+
+- Open VSCode. Here’s the simplest print statement we can start with.
+```cpp
+#include <iostream>
+ 
+int main()
+{
+    std::cout << "Hello World";
+    return 0;
+}
+```
+
+Output:
+```
+Hello World
+```
+
+<br>
+
+## 1.3. Basic Structure & Syntax
+
+<br>
+
+Programming in C++ involves following a basic structure throughout. To understand that basic structure, the first program we learned writing in C++ will be referred to. 
+```cpp
+#include <iostream>
+ 
+int main()
+{
+    std::cout << "Hello World";
+    return 0;
+}
+```
+Here’s what it can be broken down to.
+
+### **Pre-processor commands/ Header files**
+
+It is common for C++ programs to include many built-in elements from the standard C++ library, including classes, keywords, constants, operators, etc. It is necessary to include an appropriate header file in a program in order to use such pre-defined elements.
+
+In the above program, ```#include <iostream>``` was the line put to include the **header file iostream**.  The iostream library helps us to get input data and show output data. The iostream library also has many more uses and error facilities; it is not only limited to input and output.
+
+Header file are both system defined and user defined. To know more about header files, go to the documentary here, https://en.cppreference.com/w/cpp/header.
+
+### **Definition Section**
+
+Here, all the variables, or other user-defined data types are declared. These variables are used throughout the program and all the functions.
+
+### **Function Declaration**
+
+- After the definition of all the other entities, here we declare all the functions a program needs. These are generally user-defined.
+- Every program contains one **main** parent function which tells the compiler where to start the execution of the program. 
+- All the statements that are to be executed are written in the **main** function.
+- Only the instructions enclosed in **curly braces {}** are considered for execution by the compiler.
+- After all instructions in the main function have been executed, control leaves the main function and the program ends.
+- A C++ program is made up of different tokens combined. These tokens include:
+    - Keywords
+    - Identifiers
+    - Constants
+    - String Literal
+    - Symbols & Operators
+
+### **Keywords**
+
+-> reserved words -> can not be used elsewhere in the program for naming a variable or a function.<br> 
+-> Have a specific function or task -> Their functionalities are pre-defined. 
+
+One such example of a keyword could be ```return``` which is used to build return statements for functions. Other examples are **auto, if, default**, etc.
+
+There is a list of reserved keywords which cannot be reused by the programmer or overloaded. One can find the list here, https://en.cppreference.com/w/cpp/keyword. 
+
+### **Identifiers**
+
+- Identifiers are names given to variables or functions to differentiate them from one another. Their definitions are solely based on our choice but there are a few rules that we have to follow while naming identifiers. One such rule says that the name can not contain special symbols such as @, -, *, <, etc.
+
+- C++ is a case-sensitive language so an identifier containing a capital letter and another one containing a small letter in the same place will be different. For example, the three words: Code, code, and cOde can be used as three different identifiers.
 
 ## 02 - Variables & Comments in C++
 
 - A variable is a container to hold data.<br> 
 Like for storing something we need containers . Now for different types of things we need different container likewise in C++ to store different types of data we have different datatypes in C++. 
 > C++ provides a layer of abstraction (from low level to high level) where you can represent your data as int, float, double etc.
+
+### **Variables**
 
 - Variable can be of various types. Primarily we have these variable types in C++ :
 1. Int - eg. 1,3,2,56,0,...etc.
@@ -26,13 +205,50 @@ Like for storing something we need containers . Now for different types of thing
 5. Boolean - True or False.
 - int sum = 36; means sum is an integer variable which holds value 36 in memory.
 
-### Syntax for declaring variables in C++
+### **Syntax for declaring variables in C++**
 
-- Data_type Variable_name = Value;
+- ```Data_type Variable_name = Value;```
 eg. - int a = 4; , char letter = 'a'; , ... etc.
 - Based on Scope, variable can be classified into two types:
 1. Local Variables
 2. Global Variables
+
+### **Constants**
+
+Constants are very similar to a variable and they can also be of any data type. The only difference between a constant and a variable is that a constant’s value never changes.
+
+### **String Literal**
+
+String literals or string constants are a sequence of characters enclosed in double quotation marks. Escape sequences are also string literals.
+
+### **Symbols and Operators**
+
+Symbols are special characters reserved to perform certain actions. Using them lets the compiler know what specific tasks should be performed on the given data. Several examples of symbols are arithmetical operators such as +, *, or bitwise operators such as ^, &.
+
+<br>
+
+## 1.4. C++ Comments
+## 1.5. C++ Variables
+## 2.1. C++ Data Types & Constants
+## 2.2. C++ Operators
+## 2.3. C++ Manipulators
+## 2.4. C++ Basic Input/Output
+## 3.1. Control Structure
+## 3.2. C++ If Else
+## 3.3. C++ Switch Case
+## 4.1. C++ Loops
+## 4.2. For Loop
+## 4.3. While Loop
+## 4.4. Do While Loop
+## 5.1. Break Statment
+## 5.2. Continue Statement
+## 6.1. Array Basics
+## 6.2. Array Operations
+## 7.1. Operation on Pointers
+## 8.1. Strings
+## 9.1. Structures
+## 9.2. Unions
+## 9.3. Enums
 
 ### Comments
 Used to increase the readability of a program.<br>
