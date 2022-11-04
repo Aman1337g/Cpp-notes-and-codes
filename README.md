@@ -39,8 +39,6 @@
 
 ## 1.1. C++ Overview
 
-<br>
-
 ### **What is C++ ?**
 
 - C++ -> 1979 -> Bjarne Stroustrup -> Extension of C
@@ -67,8 +65,6 @@
 <br>
 
 ## 1.2. Getting Started with C++
-
-<br>
 
 ### **Requirements before you start**
 
@@ -134,8 +130,6 @@ Hello World
 
 ## 1.3. Basic Structure & Syntax
 
-<br>
-
 Programming in C++ involves following a basic structure throughout. To understand that basic structure, the first program we learned writing in C++ will be referred to. 
 ```cpp
 #include <iostream>
@@ -189,13 +183,11 @@ There is a list of reserved keywords which cannot be reused by the programmer or
 
 - C++ is a case-sensitive language so an identifier containing a capital letter and another one containing a small letter in the same place will be different. For example, the three words: Code, code, and cOde can be used as three different identifiers.
 
-## 02 - Variables & Comments in C++
+### **Variables**
 
 - A variable is a container to hold data.<br> 
 Like for storing something we need containers . Now for different types of things we need different container likewise in C++ to store different types of data we have different datatypes in C++. 
 > C++ provides a layer of abstraction (from low level to high level) where you can represent your data as int, float, double etc.
-
-### **Variables**
 
 - Variable can be of various types. Primarily we have these variable types in C++ :
 1. Int - eg. 1,3,2,56,0,...etc.
