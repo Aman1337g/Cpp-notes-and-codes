@@ -1,3 +1,7 @@
+/*
+    WAP that will ask for a temperature in Fahrenheit and display it in Celsius using a class called
+    called temp and member functions.
+*/
 #include <iostream>
 using namespace std;
 

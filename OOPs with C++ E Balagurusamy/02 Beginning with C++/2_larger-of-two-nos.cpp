@@ -1,3 +1,6 @@
+/*
+    Wrtie a program to read two numbers from the keyboard and display the larger vlaue on the screen.
+*/
 #include <iostream>
 using namespace std;
 
