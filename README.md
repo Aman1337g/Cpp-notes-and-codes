@@ -756,3 +756,80 @@ In **Lists**, we have,
 In associative containers, we cannot specifically tell which operation is faster or slower, we’ll have to inspect every data structure separately.
 
 <br>
+
+## 17 - C++ Header Files
+
+- Header file - Contain a set of predefined standard library functions.It enhances code functionality and readability.
+- You request to use a header file in your program by including it with the C preprocessing directive "#include".
+- All the header file have a '.h' extension.
+- In C++, all the header files may or may not end with the '.h' extension but in C, all the header files must necessarily end with the '.h' extension.
+- A header file contains: 
+ 1. Function definitions
+ 2. Data type definitions
+ 3. Macros
+- '#include' is preprocessor directive used for instructing compiler that header files need to be processed before compilation. 
+- There are of 2 types of header file: 
+ 1. Pre-existing header files: Files which are already available in C/C++ compiler we just need to import them.
+ 2. User-defined header files: These files are defined by the user and can be imported using "#include".
+
+ **Syntax**
+```cpp
+#include <filename.h>
+// or
+#include "filename.h"
+```
+> **Note:** We can’t include the same header file twice in any program.
+
+### Including Multiple Header Files: 
+
+You can use various header files in a program. When a header file is included twice within a program, the compiler processes the contents of that header file twice. This leads to an error in the program. To eliminate this error, conditional preprocessor directives are used. 
+
+**Syntax:**
+ 
+```cpp
+#ifndef HEADER_FILE_NAME
+#define HEADER_FILE_NAME
+
+   the entire header file
+
+#endif
+```
+
+This construct is called wrapper **"#ifndef"**. When the header is included again, the conditional will become false, because **HEADER_FILE_NAME** is defined. The preprocessor will skip over the entire contents of the file and the compiler will not see it twice.<br>
+Sometimes it’s essential to include several diverse header files based on the requirements of the program. For this, multiple conditionals are used.
+
+**Syntax:** 
+ 
+```cpp
+#if SYSTEM_ONE
+        #include "system1.h"
+#elif SYSTEM_TWO
+        #include "system2.h"
+#elif SYSTEM_THREE
+   ....
+#endif
+```
+
+**Standard Header Files And Their Uses:**
+ 
+1. ```#include<stdio.h>```: It is used to perform input and output operations using functions scanf() and printf().
+2. ```#include<iostream>```: It is used as a stream of Input and Output using cin and cout.
+3. ```#include<string.h>```: It is used to perform various functionalities related to string manipulation like strlen(), strcmp(), strcpy(), size(), etc.
+4. ```#include<math.h>```: It is used to perform mathematical operations like sqrt(), log2(), pow(), etc.
+5. ```#include<iomanip.h>```: It is used to access set() and setprecision() function to limit the decimal places in variables.
+6. ```#include<signal.h>```: It is used to perform signal handling functions like signal() and raise().
+7. ```#include<stdarg.h>```:It is used to perform standard argument functions like va_start() and va_arg(). It is also used to indicate start of the variable-length argument list and to fetch the arguments from the variable-length argument list in the program respectively.
+8. ```#include<errno.h>```: It is used to perform error handling operations like errno(), strerror(), perror(), etc.
+9. ```#include<fstream.h>```: It is used to control the data to read from a file as an input and data to write into the file as an output.
+10. ```#include<time.h>```: It is used to perform functions related to date() and time() like setdate() and getdate(). It is also used to modify the system date and get the CPU time respectively.
+11. ```#include<float.h>```: It contains a set of various platform-dependent constants related to floating point values. These constants are proposed by ANSI C. They allow making programs more portable. Some examples of constants included in this header file are- e(exponent), b(base/radix), etc.
+12. ```#include<limits.h>```: It determines various properties of the various variable types. The macros defined in this header, limits the values of various variable types like char, int, and long. These limits specify that a variable cannot store any value beyond these limits, for example an unsigned character can store up to a maximum value of 255.
+13. ```#include<assert.h>```: It contains information for adding diagnostics that aid program debugging.
+14. ```#include<ctype.h>```: It contains function prototypes for functions that test characters for certain properties , and also function prototypes for functions that can be used to convert uppercase letters to lowercase letters and vice versa.
+15. ```#include<locale.h>```: It contains function prototypes and other information that enables a program to be modified for the current locale on which it’s running. It enables the computer system to handle different conventions for expressing data such as times, dates or large numbers throughout the world.
+16. ```#include<setjmp.h>```: It contains function prototypes for functions that allow bypassing of the usual function call and return sequence.
+17. ```#include<stddef.h>```: It contains common type definitions used by C for performing calculations.
+
+**Non-Standard Header File And its Uses:**
+
+- ```#include<bits/stdc++.h>```: It contains all standard library of the header files mentioned above. So if you include it in your code, then you need not have to include any other standard header files. But as it is a non-standard header file of GNU C++ library, so, if you try to compile your code with some compiler other than GCC it might fail; e.g. MSVC do not have this header. (See [this](https://www.geeksforgeeks.org/bitsstdc-h-c/) article for more reference)
