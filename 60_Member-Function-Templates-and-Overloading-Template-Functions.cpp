@@ -33,13 +33,13 @@ void func(int a)
 template <class T>
 void func(T a)
 {
-    cout << "I am templatised func() " << a << endl;
+    cout << "I am templatised func()1 " << a << endl;
 }
 
 template <class T>
 void func1(T a)
 {
-    cout << "I am templatised func() " << a << endl;
+    cout << "I am templatised func()2 " << a << endl;
 }
 
 int main()
@@ -73,7 +73,7 @@ a2 : 32
 a3 : a
 a4 : Aman Kumar Gupta
 I am first func() 3
-I am templatised func() 3.23
-I am templatised func() 3
+I am templatised func()1 3.23
+I am templatised func()2 3
 
 */
