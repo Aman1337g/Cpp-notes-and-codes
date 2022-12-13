@@ -86,7 +86,7 @@
 - You will need to click the next button again and again until the installation process begins.
 - Check all the boxes to open VS code in any directory.
 
-![VS code setup checkbox]()
+![VS code setup checkbox](Images/check.png?raw=true)
 
 ### **What is a Compiler?**
 
