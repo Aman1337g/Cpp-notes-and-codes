@@ -180,31 +180,9 @@ There is a list of reserved keywords which cannot be reused by the programmer or
 
 ### **Identifiers**
 
-- Identifiers are names given to variables or functions to differentiate them from one another. Their definitions are solely based on our choice but there are a few rules that we have to follow while naming identifiers. One such rule says that the name can not contain special symbols such as @, -, *, <, etc.
+- Identifiers are names given to variables or functions to differentiate them from one another. Their definitions are solely based on our choice but there are a few rules that we have to follow while naming identifiers. One such rule says that the name can not contain special symbols such as **@, -, *, <**, etc.
 
-- C++ is a case-sensitive language so an identifier containing a capital letter and another one containing a small letter in the same place will be different. For example, the three words: Code, code, and cOde can be used as three different identifiers.
-
-### **Variables**
-
-- A variable is a container to hold data.<br> 
-Like for storing something we need containers . Now for different types of things we need different container likewise in C++ to store different types of data we have different datatypes in C++. 
-> C++ provides a layer of abstraction (from low level to high level) where you can represent your data as int, float, double etc.
-
-- Variable can be of various types. Primarily we have these variable types in C++ :
-1. Int - eg. 1,3,2,56,0,...etc.
-2. Float - eg. 1.34, 3.54,...etc.
-3. Char - eg. 'c', 'd', 'a', 'B' ... etc.
-4. Double - it is same as float with more precision. eg. 1.2435 , ... etc.
-5. Boolean - True or False.
-- int sum = 36; means sum is an integer variable which holds value 36 in memory.
-
-### **Syntax for declaring variables in C++**
-
-- ```Data_type Variable_name = Value;```
-eg. - int a = 4; , char letter = 'a'; , ... etc.
-- Based on Scope, variable can be classified into two types:
-1. Local Variables
-2. Global Variables
+- C++ is a **case-sensitive language** so an identifier containing a capital letter and another one containing a small letter in the same place will be different. For example, the three words: **Code**, **code**, and **cOde** can be used as three different identifiers.
 
 ### **Constants**
 
@@ -212,7 +190,7 @@ Constants are very similar to a variable and they can also be of any data type. 
 
 ### **String Literal**
 
-String literals or string constants are a sequence of characters enclosed in double quotation marks. Escape sequences are also string literals.
+String literals or string constants are a sequence of characters enclosed in double quotation(**""**) marks. Escape sequences are also string literals.
 
 ### **Symbols and Operators**
 
@@ -221,7 +199,131 @@ Symbols are special characters reserved to perform certain actions. Using them l
 <br>
 
 ## 1.4. C++ Comments
+
+A comment is a human-readable text in the source code, which is ignored by the compiler. Comments can be used to insert any informative piece which a programmer does not wish to be executed. It could be either to explain a piece of code or to make it more readable. In addition, it can be used to prevent the execution of alternative code when the process of debugging is done.<br>
+Comments can be singled-lined or multi-lined.
+
+### Single Line Comments
+
+- Single-line comments start with two forward slashes (//).
+- Any information after the slashes // lying on the same line would be ignored (will not be executed) since they become unparsable. 
+
+An example of how we use a single-line comment
+```cpp
+#include <iostream>
+ 
+int main()
+{
+    // This is a single line comment
+    std::cout << "Hello World";
+    return 0;
+}
+```
+
+### Multi-line comments
+
+- A multi-line comment starts with /* and ends with */.
+- Any information between /* and */ will be ignored by the compiler.
+
+An example of how we use a multi-line comment
+```cpp
+#include <iostream>
+ 
+int main()
+{
+    /* This is a
+    multi-line
+    comment */
+ 
+    std::cout << "Hello World";
+    return 0;
+}
+```
+
+<br>
+
 ## 1.5. C++ Variables
+
+- A variable is a container to hold data.<br> 
+Like for storing something we need containers . Now for different types of things we need different container likewise in C++ to store different types of data we have different datatypes in C++. 
+> C++ provides a layer of abstraction (from low level to high level) where you can represent your data as int, float, double etc.
+
+- Variable can be of various types. Primarily we have these variable types in C++ :
+1. int - eg. 1,3,2,56,0,...etc.
+2. float - eg. 1.34, 3.54,...etc.
+3. char - eg. 'c', 'd', 'a', 'B' ... etc.
+4. double - it is same as float with more precision. eg. 1.2435 , ... etc.
+5. boolean - True or False.
+- int sum = 36; means sum is an integer variable which holds value 36 in memory.
+
+### **Declaration**
+
+We cannot declare a variable without specifying its data type. The data type of a variable depends on what we want to store in the variable and how much space we want it to hold. The syntax for declaring a variable is simple:
+
+```cpp 
+data_type  variable_name;
+```
+OR
+```cpp
+data_type  variable_name = value;
+```
+
+### **Naming a Variable**
+
+There is no limit to what we can call a variable. Yet there are specific rules we must follow while naming a variable:
+- A variable name in C++ can have a length of range 1 to 255 characters
+- A variable name can only contain alphabets, digits, and underscores(_).
+- A variable cannot start with a digit.
+- A variable cannot include any white space in its name.
+- Variable names are case sensitive
+- The name should not be a reserved keyword or any special character. 
+
+### **Variable Scope**
+
+The scope of a variable is the region in a program where the existence of that variable is valid. Based on its scope, variables can be classified into two types:
+
+**Local variables:**
+
+Local variables are declared inside the braces of any function and can be assessed only from that particular function. 
+
+**Global variables:**
+
+Global variables are declared outside of any function and can be accessed from anywhere.
+
+An example that demonstrates the difference in applications of a local and a global variable is given below.
+```cpp
+#include <iostream>
+using namespace std;
+ 
+int a = 5; //global variable
+ 
+void func()
+{
+    cout << a << endl;
+}
+ 
+int main()
+{
+    int a = 10; //local variable
+    cout << a << endl;
+    func();
+    return 0;
+}
+```
+```
+Output:
+
+10
+5
+```
+*Explanation: A local variable a was declared in the main function, and when printed, gave 10. This is because, within the body of a function, a local variable takes precedence over a global variable with the same name. But since there was no variable declared in the func function, it considered the global variable a for printing, and hence the value 5.*
+
+A variable, as its name is defined, can be altered, or its value can be changed, but the same is not true for its type. If a variable is of integer type, it will only store an integer value through a program. We cannot assign a character type value to an integer variable. We can not even store a decimal value into an integer variable.
+
+[**Jump to Index**](#table-of-contents)
+
+<br>
+
 ## 2.1. C++ Data Types & Constants
 ## 2.2. C++ Operators
 ## 2.3. C++ Manipulators
@@ -243,26 +345,7 @@ Symbols are special characters reserved to perform certain actions. Using them l
 ## 9.2. Unions
 ## 9.3. Enums
 
-### Comments
-Used to increase the readability of a program.<br>
-For example -
-```cpp
-// Single Line Comment
-```
-```cpp
-/* 
-    Multi-line Comment
-*/
-```
-
 <br>
-
-## 03 - Variable Scope and Data Types in C++
-
-- Scope of a variable is the region in code where the existence of variable is valid.
-- Based on scope we have local and global variables in C++
-- **Local Variables**: Local variables are declared inside the braces of any function and can be accessed only from there.
-- **Global Variables**: Global variables are declared outside any function and can be accessed from anywhere.
 
 ### C++ Data Types
 
@@ -271,15 +354,6 @@ For example -
     - Built-in - int, float, char, double, bool.
     - User-defined - struct, union, enum .
     - Derived - array, function, pointer.
-
-### Rules to declare variables in C++
-
-- Variable names in C++ can range from 1 to 255 characters.
-- All variable names must begin with a letter of the alphabet or an underscore(_).
-- After the first initial letter, variable names can also contain letters and numbers.
-- Variable names are case sensitive. eg. - means variable 'aman' and 'Aman' are two different things in C++.
-- No spaces or special characters are allowed.
-- You cannot use a C++ keyword (a reserved word) as a variable name.
 
 <br>
 
