@@ -85,7 +85,8 @@
 - After the download is completed, open the setup and run it by saving VS Code in the default location. 
 - You will need to click the next button again and again until the installation process begins.
 - Check all the boxes to open VS code in any directory.
-[!VS code setup checkbox](/Images/check.jpg)
+
+![VS code setup checkbox]()
 
 ### **What is a Compiler?**
 
