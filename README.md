@@ -325,43 +325,38 @@ A variable, as its name is defined, can be altered, or its value can be changed,
 <br>
 
 ## 2.1. C++ Data Types & Constants
-## 2.2. C++ Operators
-## 2.3. C++ Manipulators
-## 2.4. C++ Basic Input/Output
-## 3.1. Control Structure
-## 3.2. C++ If Else
-## 3.3. C++ Switch Case
-## 4.1. C++ Loops
-## 4.2. For Loop
-## 4.3. While Loop
-## 4.4. Do While Loop
-## 5.1. Break Statment
-## 5.2. Continue Statement
-## 6.1. Array Basics
-## 6.2. Array Operations
-## 7.1. Operation on Pointers
-## 8.1. Strings
-## 9.1. Structures
-## 9.2. Unions
-## 9.3. Enums
-
-<br>
 
 ### C++ Data Types
 
-- Data types define the type of data a **variable** can hold, for example an integer variable can hold integer data, a character type variable can hold character data etc.
-- Data types in C++ are categorised in three groups : 
-    - Built-in - int, float, char, double, bool.
-    - User-defined - struct, union, enum .
-    - Derived - array, function, pointer.
+Data types define the type of data a variable can hold; for example, an integer variable can hold integer data, a character can hold character data, etc.<br>
+Data types in C++ are categorized into three groups:
+
+**Built-in data types** 
+
+These data types are pre-defined for a language and could be used directly by the programmer.<br>
+Examples are: Int, Float, Char, Double, Boolean
+
+**User-defined data types**
+
+These data types are defined by the user itself.<br>
+Examples are: Class, Struct, Union, Enum
+
+**Derived data types**
+
+These data types are derived from the primitive built-in data types.<br>
+Examples are: Array, Pointer, Function
+
+Some of the popular built-in data types and their applications are:
+
+|Data Type|Size|Description|
+|---|---|---|
+|int|2 or 4 bytes|Stores whole numbers, without decimals
+|float|4 bytes|Stores fractional numbers, containing one or more decimals. They require 4 bytes of memory space.
+|double|8 bytes|Stores fractional numbers, with more precision. They require 8 bytes of memory space.
+|char|1 byte|Stores a single character/letter/number, or ASCII values
+|boolean|1 byte|Stores true or false values
 
 <br>
-
-## 04 - Basic input/output in C++
-
-- C++ comes with libraries which helps us in performing input/output. In C++ sequence of bytes corresponding to input and output are commonly known as **streams**.
-- **Input Stream**: Direction of flow of bytes takes place from input device (eg.- Keyboard) to the main memory.
-- **Output Stream**: Direction of flow of bytes takes place from main memory to the output device (eg.- Display).
 
 ### Data Type size and range in C++ (For G++ 64 BIT)
 
@@ -386,6 +381,56 @@ A variable, as its name is defined, can be altered, or its value can be changed,
 | double | 8 | -2^63 to (2^63)-1
 | long double | 12 | -2^95 to (2^95)-1
 | wchar_t | 2 or 4 | 1 wide character
+
+### C++ Constants
+
+Constants are unchangeable; when a constant variable is initialized in a program, its value cannot be changed afterwards.
+```cpp
+#include <iostream>
+using namespace std;
+ 
+int main()
+{
+    const float PI = 3.14;
+    cout << "The value of PI is " << PI << endl;
+    PI = 3.00; //error, since changing a const variable is not allowed.
+}
+```
+```
+Output:
+
+error: assignment of read-only variable 'PI'
+```
+
+<br>
+
+## 2.2. C++ Operators
+## 2.3. C++ Manipulators
+## 2.4. C++ Basic Input/Output
+## 3.1. Control Structure
+## 3.2. C++ If Else
+## 3.3. C++ Switch Case
+## 4.1. C++ Loops
+## 4.2. For Loop
+## 4.3. While Loop
+## 4.4. Do While Loop
+## 5.1. Break Statment
+## 5.2. Continue Statement
+## 6.1. Array Basics
+## 6.2. Array Operations
+## 7.1. Operation on Pointers
+## 8.1. Strings
+## 9.1. Structures
+## 9.2. Unions
+## 9.3. Enums
+
+<br>
+
+## 04 - Basic input/output in C++
+
+- C++ comes with libraries which helps us in performing input/output. In C++ sequence of bytes corresponding to input and output are commonly known as **streams**.
+- **Input Stream**: Direction of flow of bytes takes place from input device (eg.- Keyboard) to the main memory.
+- **Output Stream**: Direction of flow of bytes takes place from main memory to the output device (eg.- Display).
 
 <br>
 
