@@ -405,6 +405,21 @@ error: assignment of read-only variable 'PI'
 <br>
 
 ## 2.2. C++ Operators
+
+1. Arithmetic operators ( +, -, *, /, % )
+2. Assignment operator (=)
+3. Compound assignment (+=, -=, *=, /=, %=, >>=, <<=, &=, ^=, |=)
+4. Increment and decrement (++, --)
+5. Relational and comparison operators ( ==, !=, >, <, >=, <= )
+6. Logical operators ( !, &&, || )
+7. Conditional ternary operator ( ? )
+8. Comma operator ( , )
+9. Bitwise operators ( &, |, ^, ~, <<, >> )
+
+> To get a list of operator precedence , go to - https://en.cppreference.com/w/cpp/language/operator_precedence
+
+<br>
+
 ## 2.3. C++ Manipulators
 ## 2.4. C++ Basic Input/Output
 ## 3.1. Control Structure
@@ -431,22 +446,6 @@ error: assignment of read-only variable 'PI'
 - C++ comes with libraries which helps us in performing input/output. In C++ sequence of bytes corresponding to input and output are commonly known as **streams**.
 - **Input Stream**: Direction of flow of bytes takes place from input device (eg.- Keyboard) to the main memory.
 - **Output Stream**: Direction of flow of bytes takes place from main memory to the output device (eg.- Display).
-
-<br>
-
-## 05 - Operators in C++
-
-1. Arithmetic operators ( +, -, *, /, % )
-2. Assignment operator (=)
-3. Compound assignment (+=, -=, *=, /=, %=, >>=, <<=, &=, ^=, |=)
-4. Increment and decrement (++, --)
-5. Relational and comparison operators ( ==, !=, >, <, >=, <= )
-6. Logical operators ( !, &&, || )
-7. Conditional ternary operator ( ? )
-8. Comma operator ( , )
-9. Bitwise operators ( &, |, ^, ~, <<, >> )
-
-> To get a list of operator precedence , go to - https://en.cppreference.com/w/cpp/language/operator_precedence
 
 <br>
 
