@@ -460,6 +460,45 @@ Entering a new line.
 <br>
 
 ## 2.4. C++ Basic Input/Output
+
+C++ language comes with different libraries which helps us in performing input/output. In C++ sequence of bytes corresponding to input and output are commonly known as **streams**.There are two types of streams. They are, <br>
+- **Input Stream**: Direction of flow of bytes takes place from input device (eg.- Keyboard) to the main memory.
+- **Output Stream**: Direction of flow of bytes takes place from main memory to the output device (eg.- Display).
+
+An example that demonstrates how input and output are popularly done in C++.
+```cpp
+#include <iostream>
+using namespace std;
+ 
+int main()
+{
+    int num;
+    cout << "Enter a number: ";
+    cin >> num;                        // Getting input from the user
+    cout << "Your number is: " << num; // Displaying the input value
+    return 0;
+}
+```
+```
+Input:
+
+Enter a number: 10
+Output:
+
+Your number is: 10
+```
+
+**Important Points**
+
+- The sign << is called the **insertion operator** (inserting on the display).
+- The sign >> is called the **extraction operator** (extracting user input).
+- **cout** keyword is used to print.
+- **cin** keyword is used to take input at run time.
+
+[**Jump to Index**](#table-of-contents)
+
+<br>
+
 ## 3.1. Control Structure
 ## 3.2. C++ If Else
 ## 3.3. C++ Switch Case
@@ -476,14 +515,6 @@ Entering a new line.
 ## 9.1. Structures
 ## 9.2. Unions
 ## 9.3. Enums
-
-<br>
-
-## 04 - Basic input/output in C++
-
-- C++ comes with libraries which helps us in performing input/output. In C++ sequence of bytes corresponding to input and output are commonly known as **streams**.
-- **Input Stream**: Direction of flow of bytes takes place from input device (eg.- Keyboard) to the main memory.
-- **Output Stream**: Direction of flow of bytes takes place from main memory to the output device (eg.- Display).
 
 <br>
 
