@@ -655,7 +655,78 @@ Here, even if i was less than 5 from the very beginning, the do-while let the pr
 <br>
 
 ## 5.1. Break Statment
+
+Break statement is used to **break the loop or switch case statements execution** and brings the control to the next block of code after that particular loop or switch case it was used in.
+
+Break statements are used to bring the program control out of the loop it was encountered in. The break statement is used inside loops or switch statements in C++ language.
+
+One such example to demonstrate how a break statement works is
+```cpp
+#include <iostream>
+using namespace std;
+ 
+int main()
+{
+    int num = 10;
+    int i;
+    for (i = 0; i < num; i++)
+    {
+        if (i == 6)
+        {
+            break;
+        }
+        cout << i << " ";
+    }
+ 
+    return 0;
+}
+```
+```
+Output
+
+0 1 2 3 4 5
+```
+Here, when i became 6, the break statement got executed and the program came out of the for loop.
+
+<br>
+
 ## 5.2. Continue Statement
+
+The continue statement is **used inside loops** in C++ language. When a continue statement is encountered inside the loop, the control jumps to the beginning of the loop for the next iteration, skipping the execution of statements inside the body of the loop after the continue statement.
+
+It is used to bring the control to the next iteration of the loop. Typically, the continue statement skips some code inside the loop and lets the program move on with the next iteration. It is mainly used for a condition so that we can skip some lines of code for a particular condition.
+
+It forces the next iteration to follow in the loop unlike a break statement, which terminates the loop itself the moment it is encountered. 
+
+One such example to demonstrate how a continue statement works is
+```cpp
+#include <iostream>
+using namespace std;
+ 
+int main()
+{
+    for (int i = 0; i <= 10; i++)
+    {
+        if (i < 6)
+        {
+            continue;
+        }
+        cout << i << " ";
+    }
+    return 0;
+}
+```
+```
+Output
+
+6 7 8 9 10
+```
+Here, the continue statement was continuously executing while i remained less than 5. For all the other values of i, we got the print statement working.
+
+[**Jump to Index**](#table-of-contents)
+
+<br>
+
 ## 6.1. Array Basics
 ## 6.2. Array Operations
 ## 7.1. Operation on Pointers
