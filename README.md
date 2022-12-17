@@ -806,7 +806,165 @@ Output:
 <br>
 
 ## 7.1. Operation on Pointers
+
+### Address of Operator (&): <br>
+**&** is also known as the **Referencing Operator**. It is a unary operator. The variable name used along with the Address of operator must be the name of an already defined variable.
+
+> Using & operator along with a variable gives the address number of the variable.
+
+Here’s one example to demonstrate the use of the address of the operator.
+```cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int a = 10;
+    cout << "Address of variable a is " << &a << endl;
+    return 0;
+}
+```
+```
+Output:
+
+Address of variable a is 0x61ff0c
+``` 
+
+### Indirection Operator
+
+**\*** is also known as the **Dereferencing Operator**. It is a unary operator. It takes an address as its argument and returns the content/container whose address is its argument. 
+
+Here’s one example to demonstrate the use of the indirection operator.
+```cpp
+#include <iostream>
+using namespace std;
+ 
+int main()
+{
+    int a = 100;
+    cout << "Value of variable a stored at address " << &a << " is " << (*(&a)) << endl;
+    return 0;
+}
+```
+```
+Output:
+
+Value of variable a stored at address 0x61ff0c is 100
+``` 
+
+### Pointer to Pointer
+
+Pointer to Pointer is a simple concept, in which **we store the address of one pointer to another pointer**. This is also known as multiple indirections owing to the operator’s name.  Here, the first pointer contains the address of the second pointer, which points to the address where the actual variable has its value stored. 
+
+An example to demonstrate how we define a pointer to a pointer.
+```cpp
+#include <iostream>
+using namespace std;
+ 
+int main()
+{
+    int a = 100;
+    int *b = &a;
+    int **c = &b;
+    cout << "Value of variable a is " << a << endl;
+    cout << "Address of variable a is " << b << endl;
+    cout << "Address of pointer b is " << c << endl;
+    return 0;
+}
+```
+```
+Output:
+
+Value of variable a is 100
+Address of variable a is 0x61ff08
+Address of pointer b is 0x61ff04
+```
+
+### Arrays and Pointers
+
+Storing the address of an array into pointer is different from storing the address of a variable into the pointer. **The name of an array itself is the address of the first index of an array**. So, to use the **(ampersand)&** operator with the array name for assigning the address to a pointer is wrong. Instead, we used the array name itself.
+
+An example program for storing the starting address of an array in the pointer,
+```cpp
+int marks[] = {99, 100, 38};
+int *p = marks;
+cout << "The value of marks[0] is " << *p << endl;
+```
+```
+Output:
+
+The value of marks[0] is 99
+```
+
+In order to access other elements of the same array that pointer p points to, we can use pointer arithmetic, such as addition and subtraction of pointers.
+
+> ***\*(p+1)*** returns the value at the second position in the array marks. Here’s how it works.
+```cpp
+int marks[] = {99, 100, 38};
+int *p = marks;
+cout << "The value of marks[0] is " << *p << endl;
+cout << "The value of marks[1] is " << *(p + 1) << endl;
+cout << "The value of marks[2] is " << *(p + 2) << endl;
+```
+```
+Output:
+
+The value of marks[0] is 99
+The value of marks[1] is 100
+The value of marks[2] is 38
+```
+
+[**Jump  to Index**](#table-of-contents)
+
+<br>
+
 ## 8.1. Strings
+
+A string is an array of characters. Unlike in C, we can define a string variable and not necessarily a character array to store a sequence of characters. Data of the same type are stored in an array, for example, integers can be stored in an integer array, similarly, a group of characters can be stored in a character array or a string variable. A string is a one-dimensional array of characters.
+
+Declaring a string is very simple, the same as declaring a one-dimensional array. It’s just that we are considering it as an array of characters.
+
+Below is the syntax for declaring a string.
+```cpp
+string string_name ;
+```
+In the above syntax, string_name is any name given to the string variable and it can be given a string input later or it can even be initialised at the time of definition.
+```cpp
+string string_name = "Aman Kumar Gupta";
+```
+Example of a string:
+```cpp
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    // declare and initialise string
+    string str = "Aman Kumar Gupta";
+    // user input string
+    string str1;
+    cout << "Enter string : ";
+    getline(cin, str1);
+
+    cout << str << endl
+         << str1;
+    return 0;
+}
+```
+```
+Output:
+
+Enter string : Welcome IIIT Sophomore!!
+Aman Kumar Gupta
+Welcome IIIT Sophomore!!
+```
+> **Note:** To be able to use these strings, you must declare another header file named ***string***. It contains a lot of useful string functions and libraries as well.
+
+[**Jump  to Index**](#table-of-contents)
+
+<br>
+
 ## 9.1. Structures
 ## 9.2. Unions
 ## 9.3. Enums
