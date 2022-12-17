@@ -500,12 +500,160 @@ Your number is: 10
 <br>
 
 ## 3.1. Control Structure
+
+The work of control structures is to give flow and logic to a program. There are three types of basic control structures in C++
+                     
+1. **Sequence Structure** - refers to the sequence in which program execute instructions one after another. 
+2. **Selection Structure** (if..else , if..else if..else , switch..case) -  refers to the execution of instruction according to the selected condition, which can be either true or false.
+3. **Loop Structure** (for , while , do...while) - refers to the execution of an instruction in a loop until the condition gets false.
+<hr>
+1. Sequence Structure ---> Entry ---> Action1 ---> Action2 ---> Exit<br>
+2. Selection Structure ---> Entry ---> Condition --> if true --> Action1 ---> if false --> Action2 ---> Exit<br>
+3. Loop Structure ---> Entry ---> Condition --> if true --> Action1 in loop until termination ---> if false --> Action2 ---> Exit <br>
+
+<br>
+
 ## 3.2. C++ If Else
+
+**Syntax :**
+```cpp
+if ( condition ) {
+    //statements;
+}
+else if ( condition ) {
+    //statements;
+}
+else {
+    //statements;
+}
+```
+> **Note:** The ***else if*** statement checks for a different condition if the conditions checked above it evaluate to false.
+
+<br>
+
 ## 3.3. C++ Switch Case
+
+The control statement that allows us to make a decision effectively from the number of choices is called a switch, or a switch case-default since these three keywords go together to make up the control statement. 
+
+Switch executes that block of code, which matches the case value. If the value does not match with any of the cases, then the default block is executed. 
+
+**Syntax :**
+
+```cpp
+switch (integer / character expression)
+{
+case {value 1}:
+    //do this;
+    break;
+
+case {value 2}:
+    //do this;
+    break;
+
+default:
+    //do this;
+}
+```
+> The **break** keyword in a case block indicates the end of a particular case. If we do not put the **break** in each case, then even though the specific case is executed, the switch will continue to execute all the cases until the end is reached.
+
+[**Jump to Index**](#table-of-contents)
+
+<br>
+
 ## 4.1. C++ Loops
+
+- The need to perform an action, again and again, with little or no variations in the details each time they are executed is met by a mechanism known as a loop. 
+- This involves repeating some code in the program, either a specified number of times or until a particular condition is satisfied. 
+- Loop-controlled instructions are used to perform this repetitive operation efficiently ensuring the program doesn’t look redundant at the same time due to the repetitions.
+
+Following are the three types of loops in C++ programming.
+
+- For Loop
+- While Loop
+- Do While Loop
+
+<br>
+
 ## 4.2. For Loop
+
+A for loop is a **repetition control structure** that allows us to efficiently write a loop that will execute a specific number of times. The for-loop statement is very specialized. We use a for loop when we **already know the number of iterations** of that particular piece of code we wish to execute. Although, when we do not know about the number of iterations, we use a while loop which is discussed next. 
+
+Here is the syntax of a for loop in C++ programming.
+```cpp
+for (initialise counter; test counter; increment / decrement counter)
+{
+    //set of statements
+}
+```
+Here,
+- **initialize counter**: It will initialize the loop counter value. It is usually i=0.
+- **test counter**: This is the test condition, which if found true, the loop continues, otherwise terminates.
+- **Increment/decrement counter**: Incrementing or decrementing the counter.
+- **Set of statements**: This is the body or the executable part of the for loop or the set of statements that has to repeat itself.
+
+<br>
+
 ## 4.3. While Loop
+
+A While loop is also called a **pre-tested loop**. A while loop allows a piece of code in a program to be executed multiple times, depending upon a given test condition which evaluates to either true or false. The while loop is mostly used in cases where the **number of iterations is not known**. If the number of iterations is known, then we could also use a for loop as mentioned previously. 
+
+Following is the syntax for using a while loop.
+```cpp
+while (condition test)
+{
+    // Set of statements
+}
+```
+The body of a while loop can contain a single statement or a block of statements. The test condition may be any expression that should evaluate as either true or false. The loop iterates while the test condition evaluates to true. When the condition becomes false, it terminates.
+
+<br>
+
 ## 4.4. Do While Loop
+
+A do-while loop is a little different from a normal while loop. A do-while loop, unlike what happens in a while loop, executes the statements inside the body of the loop before checking the test condition.
+
+So even if a condition is false in the first place, the do-while loop would have already run once. A do-while loop is very much similar to a while loop, except for the fact that it is **guaranteed to execute the body at least once**.
+
+Unlike for and while loops, which test the loop condition first, then execute the code written inside the body of the loop, the do-while loop checks its condition at the end of the loop. 
+
+Following is the syntax for using a do-while loop.
+```cpp
+do
+{
+    //statements;
+} while (test condition);
+``` 
+
+First, the body of the do-while loop is executed once. Only then, the test condition is evaluated. If the test condition returns true, the set of instructions inside the body of the loop is executed again, and the test condition is evaluated. The same process goes on until the test condition becomes false. If the test condition returns false, then the loop terminates.
+
+One such example to demonstrate how a do-while loop works is
+```cpp
+#include <iostream>
+using namespace std;
+ 
+int main()
+{
+    int i = 5;
+    do
+    {
+        cout << i << " ";
+        i++;
+    } while (i < 5);
+ 
+    return 0;
+}
+```
+```
+Output 
+
+5
+```
+Here, even if i was less than 5 from the very beginning, the do-while let the print statement execute once, and then terminated.
+
+[**Jump to Index**](#table-of-contents)
+
+<br>
+
 ## 5.1. Break Statment
 ## 5.2. Continue Statement
 ## 6.1. Array Basics
@@ -518,46 +666,6 @@ Your number is: 10
 
 <br>
 
-## 06 - C++ Control Structures
-
-- Basic  Control Structure -                        
-1. Sequence Structure
-2. Selection Structure (if..else , if..else if..else , switch..case)
-3. Loop Structure (for , while , do...while)
-<hr>
-1. Sequence Structure ---> Entry ---> Action1 ---> Action2 ---> Exit<br>
-2. Selection Structure ---> Entry ---> Condition --> if true --> Action1 ---> if false --> Action2 ---> Exit<br>
-3. Loop Structure ---> Entry ---> Condition --> if true --> Action1 in loop until termination ---> if false --> Action2 ---> Exit <br>
-
-### Loops in C++
-
-There are three types of loops in C++:
-1. For Loop
-2. While Loop
-3. do-While Loop
-
-**for Loop Syntax :**
-```cpp
-for(initialization; condition; updation) {
-    loop body(C++);
-}
-```
-
-**while Loop Syntax :**
-```cpp
-while(condition) {
-    statements;
-}
-```
-
-**do-while Loop Syntax :**
-```cpp
-do {  // atleast runs 1 time
-    statements;
-}while(condition);
-```
-
-<br>
 
 ## 07 - Arrays in C++
 
