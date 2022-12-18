@@ -1462,6 +1462,8 @@ float sum(float a, int b);
 ```
 > Exact matches are always preferred while looking for a function that has the same set of parameters.
 
+[**Jump to Index**](#table-of-contents)
+
 <br>
 
 ## 08 - Why OOPS?
