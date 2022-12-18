@@ -34,6 +34,13 @@
     - [Structures](#91-structures)
     - [Unions](#92-unions)
     - [Enums](#93-enums)
+10. C++ Functions
+    - [Functions](#101-functions)
+    - [Functions Paremeters](#102-functions-parameters)
+    - [Methods](#103-methods)
+    - [Recursion](#104-recursion)
+    - [Function Overloading](#105-function-overloading)
+11. C++ OOPS
 
 # 1. Introduction
 
@@ -1178,7 +1185,7 @@ int main()
         cout << "The value of breakfast is " << breakfast << endl;
     }
     else
-        cout << "The value of breakfast is not equal to " << lunch << endl;
+        cout << "The value of breakfast is not equal to " << m2 << endl;
 }
 ```
 ```
@@ -1188,6 +1195,272 @@ The value of dinner is 2
 The value of breakfast is not equal to 1
 
 ```
+
+[**Jump to Index**](#table-of-contents)
+
+<br>
+
+# 10.1. Functions
+
+Functions are the main part of **top-down structured programming**. We break the code into small pieces and make functions of that code. Functions **could be called multiple or several times to provide reusability and modularity** to the C++ program. 
+
+Functions are **also called procedures or subroutines or methods** and they are often defined to perform a specific task. And that makes functions a group of code put together and given a name that can be called anytime without writing the whole code again and again in a program.
+
+### Advantages of Functions
+
+- The use of functions allows us to avoid re-writing the same logic or code over and over again.
+- With the help of functions, we can divide the work among the programmers.
+- We can easily debug or can find bugs in any program using functions.
+- They make code readable and less complex.
+
+### Aspects of a function
+
+- **Declaration:** This is where a function is declared to tell the compiler about its existence.
+- **Definition:** A function is defined to get some task executed. (It means when we define a function, we write the whole code of that function and this is where the actual implementation of the function is done).
+- **Call:** This is where a function is called in order to be used.
+ 
+### Function Prototype in C++
+
+The function prototype is the template of the function which tells the details of the function which include its name and parameters to the compiler. Function prototypes **help us to define a function after the function call**. 
+
+## Example of a function prototype,
+```cpp
+// Function prototype
+return_datatype function_name(datatype_1 a, datatype_2 b);
+
+// writing a and b is optional in function prototype
+```
+
+### Types of functions
+    
+### **Library functions:**
+
+Library functions are pre-defined functions in C++ Language. These are the functions that are included in C++ header files prior to any other part of the code in order to be used.<br>
+E.g. sqrt(), abs(), etc.
+
+### **User-defined functions:**
+
+User-defined functions are functions created by the programmer for the reduction of the complexity of a program. Rather, these are functions that the user creates as per the requirements of a program.<br>
+E.g. Any function created by the programmer (displayArray(), .... etc).
+
+<br>
+
+# 10.2. Functions Parameters
+
+A function receives information that is passed to them as a parameter. Parameters **act as variables inside the function**.<br>
+Parameters are specified collectively inside the parenthesis after the function name. Parameters inside the parenthesis are comma separated.
+
+We have different names for different parameters.
+
+### Formal Parameters
+
+So, the variable which is **declared in the function** is called a formal parameter or simply, a parameter. For example, variables a and b are formal parameters.
+```cpp
+int sum(int a, int b){    // formal parameters
+   //function body
+}
+``` 
+
+### Actual Parameters
+
+The values which are **passed to the function** are called actual parameters or simply, arguments. For example, the values num1 and num2 are arguments.
+```cpp
+int sum(int a, int b);
+ 
+int main()
+{
+    int num1 = 5;
+    int num2 = 6;
+    sum(num1, num2);    // actual parameters
+}
+```
+> A function doesn't need to have parameters or it should necessarily return some value.
+
+<br>eg- <br>
+
+```cpp
+#include <iostream>
+using namespace std;
+
+void greet() { cout << "Hello World!!"; }
+
+int main()
+{
+    greet();
+}
+```
+```
+OUTPUT
+
+Hello World!!
+```
+
+<br>
+
+# 10.3. Methods
+
+Now, there are methods using which arguments are sent to the function. They are,
+
+### Call by Value in C++
+
+In the case of call by value the copies of actual parameters are sent to the formal parameter, which means that if we change the values inside the function that will not affect the actual values. 
+
+An example that demonstrates the call by value method is,
+```cpp
+#include <iostream>
+using namespace std;
+ 
+void swap(int a, int b)
+{
+    int temp = a;
+    a = b;
+    b = temp;
+}
+ 
+int main()
+{
+    int x = 5, y = 6;
+    cout << "The value of x is " << x << " and the value of y is " << y << endl;
+    swap(x, y);
+    cout << "The value of x is " << x << " and the value of y is " << y << endl;
+}
+```
+```
+Output:
+
+The value of x is 5 and the value of y is 6
+The value of x is 5 and the value of y is 6
+ 
+```
+### Call by Pointer in C++
+
+In the case of call by pointer, the address of actual parameters is sent to the formal parameter, which means that if we change the values inside the function that will affect the actual values. 
+
+An example that demonstrates the call by pointer method is,
+```cpp
+#include <iostream>
+using namespace std;
+ 
+void swap(int *a, int *b)
+{
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+ 
+int main()
+{
+    int x = 5, y = 6;
+    cout << "The value of x is " << x << " and the value of y is " << y << endl;
+    swap(&x, &y);
+    cout << "The value of x is " << x << " and the value of y is " << y << endl;
+}
+```
+```
+Output:
+
+The value of x is 5 and the value of y is 6
+The value of x is 6 and the value of y is 5
+ 
+```
+### Call by Reference in C++
+
+In the case of call by reference, the reference of actual parameters is sent to the formal parameter, which means that if we change the values inside the function that will affect the actual values. 
+
+An example that demonstrates the call by reference method is,
+```cpp
+#include <iostream>
+using namespace std;
+ 
+void swap(int &a, int &b)
+{
+    int temp = a;
+    a = b;
+    b = temp;
+}
+ 
+int main()
+{
+    int x = 5, y = 6;
+    cout << "The value of x is " << x << " and the value of y is " << y << endl;
+    swap(x, y);
+    cout << "The value of x is " << x << " and the value of y is " << y << endl;
+}
+```
+```
+Output
+
+The value of x is 5 and the value of y is 6
+The value of x is 6 and the value of y is 5
+
+```
+Two special methods that are often used by programmers to have their program work efficiently are, 
+
+### Default Arguments in C++
+
+Default arguments are those values which are used by the function if we don’t input our value as parameter. It is **recommended to write default arguments after the other arguments**. 
+
+An example using default argument,
+```cpp
+int sum(int a, int b = 5);
+// always write default arguments from rightmost side
+``` 
+### Constant Arguments in C++
+
+Constant arguments are used when you don’t want your values to be changed or modified by the function. The **const** keyword is used to make the parameters non-modifiable.
+
+An example using constant argument,
+```cpp
+int sum(const int a, int b);
+```
+
+<br>
+
+# 10.4. Recursion
+
+When a function calls itself, it is called recursion and the function which is calling itself is called a recursive function. The recursive function consists of a base condition and a recursive condition. 
+
+Recursive functions **must be designed with a base case** to make sure the recursion stops, otherwise, they are bound to execute forever and that's not what you want. The **case in which the function doesn’t recur is called the base case**. For example, when we try to find the factorial of a number using recursion, the case when our number becomes smaller than 1 is the base case.
+
+An example of a recursive function is the function for calculating the factorial of a number.
+```cpp
+int factorial(int n){
+    if (n == 0 || n == 1){
+        return 1;
+    }
+    return n * factorial(n - 1);
+}
+```
+
+<br>
+
+# 10.5 Function Overloading
+
+Function overloading is a **process to make more than one function with the same name but different parameters, numbers, or sequences**. Now, there are a few conditions and any number of functions with the same name following any of these are called overloaded.
+
+### Same name but different data type of parameters
+
+Example
+```cpp
+float sum(int a, int b);
+float sum(float a, float b);
+``` 
+### Same name but a different number of parameters
+
+Example
+```cpp
+float sum(int a, int b);
+float sum(int a, int b, int c);
+```
+
+### Same name but different parameter sequence
+
+Example
+```cpp
+float sum(int a, float b);
+float sum(float a, int b);
+```
+> Exact matches are always preferred while looking for a function that has the same set of parameters.
 
 <br>
 
