@@ -1056,7 +1056,137 @@ salary of Aman is 120000000
 <br>
 
 ## 9.2. Unions
+
+Just like Structures, the union is a **user-defined data type**.  They **provide better memory management than structures**. All the **members in the unions share the same memory location**. 
+
+The union is a data type that allows different data belonging to different data types to be stored in the same memory locations. One of the advantages of using a union over structures is that it **provides an efficient way of reusing the memory location**, as only one of its members can be accessed at a time. A union is used in the same way we declare and use a structure. The difference lies just in the way memory is allocated to their members.
+
+### Creating a Union element
+
+We use the **union** keyword to define the union. <br>
+The syntax for defining a union is,
+```cpp
+union union_name
+{
+    //union_elements
+} union_variable;
+```
+
+Here’s one example of how a union is defined and used in main as a user-defined data type.
+```cpp
+#include <iostream>
+using namespace std;
+ 
+union money
+{
+    /* data */
+    int rice;
+    char car;
+    float pounds;
+};
+ 
+int main()
+{
+    union money m1;
+}
+``` 
+
+### Initialising and accessing union elements
+
+Different from how we used to initialise a struct in one single statement, union elements are initialised one at a time.<br>
+And also, one can access only one union element at a time. Altering one union element disturbs the value stored in other union elements.
+```cpp
+#include <iostream>
+using namespace std;
+ 
+union money
+{
+    /* data */
+    int rice;
+    char car;
+    float pounds;
+};
+ 
+int main()
+{
+    union money m1;
+    m1.rice = 34;
+    cout << m1.rice;
+    return 0;
+}
+```
+```
+Output:
+
+34
+```
+> **Note:** We can only use 1 variable at a time otherwise the compiler will give us a garbage value and the compiler chooses the data type which has maximum memory for the allocation.
+
+<br>
+
 ## 9.3. Enums
+
+Enum or enumeration is a **user-defined data type**.  Enums **have named constants that represent integral values**.  Enums are used to make the program more readable and less complex. It lets us define a fixed set of possible values and later define variables having one of those values.
+
+### Creating an Enum element
+
+We use the enum keyword to define the enum. <br>
+The syntax for defining a union is,
+```cpp
+enum enum_name
+{
+    element1,
+    element2,
+    element3
+};
+``` 
+Here’s one example of how a union is defined and used in main as a user-defined data type.
+```cpp
+enum Meal
+{
+    breakfast,
+    lunch,
+    dinner
+};
+``` 
+
+### Initialising and using enum elements
+
+Since every enum element gets assigned a value to it, they could be used to compare if a particular variable store the same value. 
+```cpp
+#include <iostream>
+using namespace std;
+
+enum Meal
+{
+    breakfast,
+    lunch,
+    dinner
+};
+
+int main()
+{
+    Meal m1 = dinner;
+    Meal m2 = lunch;
+
+    if (m1 == 2)
+    {
+        cout << "The value of dinner is " << dinner << endl;
+    }
+    if (m2 == 0)
+    {
+        cout << "The value of breakfast is " << breakfast << endl;
+    }
+    else
+        cout << "The value of breakfast is not equal to " << lunch << endl;
+}
+```
+```
+Output:
+
+The value of dinner is 2
+The value of breakfast is not equal to 1
+
 ```
 
 <br>
