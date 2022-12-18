@@ -920,7 +920,7 @@ The value of marks[2] is 38
 
 ## 8.1. Strings
 
-A string is an array of characters. Unlike in C, we can define a string variable and not necessarily a character array to store a sequence of characters. Data of the same type are stored in an array, for example, integers can be stored in an integer array, similarly, a group of characters can be stored in a character array or a string variable. A string is a one-dimensional array of characters.
+A string is an **array of characters**. Unlike in C, we can define a string variable and not necessarily a character array to store a sequence of characters. Data of the same type are stored in an array, for example, integers can be stored in an integer array, similarly, a group of characters can be stored in a character array or a string variable. A string is a one-dimensional array of characters.
 
 Declaring a string is very simple, the same as declaring a one-dimensional array. It’s just that we are considering it as an array of characters.
 
@@ -966,8 +966,98 @@ Welcome IIIT Sophomore!!
 <br>
 
 ## 9.1. Structures
+
+Variables store only one piece of information and arrays of certain data types store the information of the same data type. Variables and arrays can handle a great variety of situations. But quite often, we have to deal with the collection of dissimilar data types. For dealing with cases where there is a requirement to store dissimilar data types, C++ provides a data type called ‘structure’. The structure is a **user-defined data type** that is available in C++. Structures are **used to combine different types of data types**, just like an array is used to combine the same type of data types.
+
+Another way to store data of dissimilar data types would have been constructing individual arrays, but that must be unorganized. It is to keep in mind that **structure elements too are always stored in contiguous memory locations**.
+
+### Features of Structs
+
+1. We can assign the values of a structure variable to another structure variable of the same type using the assignment operator.
+2. Structure can be nested within another structure which means structures can have their members as structures themselves.
+3. We can pass the structure variable to a function. We can pass the individual structure elements or the entire structure variable into the function as an argument. And functions can also return a structure variable. 
+4. We can have a pointer pointing to a struct just like the way we can have a pointer pointing to an int, or a pointer pointing to a char variable.
+
+### Creating a struct element
+
+We use the **struct** keyword to define the struct. <br>
+The basic syntax for declaring a struct is,
+```cpp
+struct structure_name
+{
+    //structure_elements
+} structure_variable;
+``` 
+
+Here’s one example of how a struct is defined and used in main as a user-defined data type.
+```cpp
+#include <iostream>
+using namespace std;
+ 
+struct employee
+{
+    /* data */
+    int eId;
+    char favChar;
+    int salary;
+};
+ 
+int main()
+{
+    struct employee Aman;
+    return 0;
+}
+``` 
+
+### Accessing struct elements
+
+To access any of the values of a structure's members, we use the **dot operator (.)**. This dot operator is coded between the structure variable name and the structure member that we wish to access. <br>
+Before the dot operator, there must always be an already defined structure variable and after the dot operator, there must always be a valid structure element.
+
+Here’s one example demonstrating how we access struct elements.
+```cpp
+#include <iostream>
+using namespace std;
+
+struct employee
+{
+    /* data */
+    int eId;
+    char favChar;
+    int salary;
+};
+struct employee e1;
+
+int main()
+{
+    struct employee Aman;
+    Aman.eId = 1;
+    Aman.favChar = 'c';
+    Aman.salary = 120000000;
+    cout << "eID of Aman is " << Aman.eId << endl;
+    cout << "favChar of Aman is " << Aman.favChar << endl;
+    cout << "salary of Aman is " << Aman.salary << endl;
+
+    e1 = Aman; // assigning value of Aman to e1
+    cout << e1.eId << endl;
+    return 0;
+}
+```
+```
+Output:
+
+eID of Aman is 1
+favChar of Aman is c
+salary of Aman is 120000000
+1
+
+```
+
+<br>
+
 ## 9.2. Unions
 ## 9.3. Enums
+```
 
 <br>
 
