@@ -41,6 +41,9 @@
     - [Recursion](#104-recursion)
     - [Function Overloading](#105-function-overloading)
 11. C++ OOPS
+    - [C++ OOP Basics](#111-c-oop-basics)
+    - [C++ Classes and Objects](#112-c-classes-and-objects)
+    - [Class Attributes & Methods](#113-c++-class-attributes-&-methods)
 
 # 1. Introduction
 
@@ -1512,6 +1515,42 @@ Object-oriented programming has many advantages. Listed below are a few.
 - Principle of data hiding helps build secure systems
 - Multiple Objects can co-exist without any interference
 - Software complexity can be easily managed so that even the creation of fully reusable software with less code and shorter development time is possible.
+
+<br>
+
+## 11.2 C++ Classes and Objects
+
+### **Classes**
+
+Classes and structures are somewhat the same but still, they have some differences. For example, we **cannot hide data in structures** which means that everything is public and can be accessed easily which is a major drawback of the structure because structures cannot be used where data security is a major concern. Another drawback of structures is that **we cannot add functions** to them.
+
+Classes are **user-defined data types** and are a **template or blueprint** for creating objects. Classes consist of variables and functions which are also called class members.
+
+> We use the class keyword to define a class in C++.
+
+The syntax of a class in C++ is
+```cpp
+class class_name
+{
+    //body of the class
+};
+```
+### **Objects**
+
+Objects are **instances of a class**. To create an object, we just have to specify the class name and then the object’s name. Objects can access class attributes and methods which are bound to the class definition. It is recommended to put these attributes and methods in access modifiers so that their permissions can be better specified to allow them to be used by objects.
+
+The syntax for defining an object in C++ is
+```cpp
+class class_name
+{
+    //body of the class
+};
+
+int main()
+{
+    class_name object_name; //object
+}
+``` 
 
 <br>
 
