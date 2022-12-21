@@ -43,7 +43,7 @@
 11. C++ OOPS
     - [C++ OOP Basics](#111-c-oop-basics)
     - [C++ Classes and Objects](#112-c-classes-and-objects)
-    - [Class Attributes & Methods](#113-c++-class-attributes-&-methods)
+    - [Class Attributes & Methods](#113-class-attributes--methods)
 
 # 1. Introduction
 
@@ -1437,7 +1437,7 @@ int factorial(int n){
 
 <br>
 
-## 10.5 Function Overloading
+## 10.5. Function Overloading
 
 Function overloading is a **process to make more than one function with the same name but different parameters, numbers, or sequences**. Now, there are a few conditions and any number of functions with the same name following any of these are called overloaded.
 
@@ -1518,7 +1518,7 @@ Object-oriented programming has many advantages. Listed below are a few.
 
 <br>
 
-## 11.2 C++ Classes and Objects
+## 11.2. C++ Classes and Objects
 
 ### **Classes**
 
@@ -1554,7 +1554,7 @@ int main()
 
 <br>
 
-## 11.3 Class Attributes & Methods
+## 11.3. Class Attributes & Methods
  
 Class attributes and methods are variables and functions that are defined inside the class. They are also known as class members altogether.
 
