@@ -1203,7 +1203,7 @@ The value of breakfast is not equal to 1
 
 <br>
 
-# 10.1. Functions
+## 10.1. Functions
 
 Functions are the main part of **top-down structured programming**. We break the code into small pieces and make functions of that code. Functions **could be called multiple or several times to provide reusability and modularity** to the C++ program. 
 
@@ -1248,7 +1248,7 @@ E.g. Any function created by the programmer (displayArray(), .... etc).
 
 <br>
 
-# 10.2. Functions Parameters
+## 10.2. Functions Parameters
 
 A function receives information that is passed to them as a parameter. Parameters **act as variables inside the function**.<br>
 Parameters are specified collectively inside the parenthesis after the function name. Parameters inside the parenthesis are comma separated.
@@ -1300,7 +1300,7 @@ Hello World!!
 
 <br>
 
-# 10.3. Methods
+## 10.3. Methods
 
 Now, there are methods using which arguments are sent to the function. They are,
 
@@ -1419,7 +1419,7 @@ int sum(const int a, int b);
 
 <br>
 
-# 10.4. Recursion
+## 10.4. Recursion
 
 When a function calls itself, it is called recursion and the function which is calling itself is called a recursive function. The recursive function consists of a base condition and a recursive condition. 
 
@@ -1437,7 +1437,7 @@ int factorial(int n){
 
 <br>
 
-# 10.5 Function Overloading
+## 10.5 Function Overloading
 
 Function overloading is a **process to make more than one function with the same name but different parameters, numbers, or sequences**. Now, there are a few conditions and any number of functions with the same name following any of these are called overloaded.
 
@@ -1551,6 +1551,102 @@ int main()
     class_name object_name; //object
 }
 ``` 
+
+<br>
+
+## 11.3 Class Attributes & Methods
+ 
+Class attributes and methods are variables and functions that are defined inside the class. They are also known as class members altogether.
+
+Consider an example below to understand what class attributes are
+```cpp
+#include <iostream>
+using namespace std;
+
+class Employee
+{
+    string eID;
+    string eName;
+    int ePhone;
+    public:
+};
+
+
+int main()
+{
+    Employee Aman;
+}
+``` 
+
+A class named Employee is built and three members, eId, eName and ePhone are defined inside the class. These three members are variables and are known as class attributes. Now, an object named Aman is defined in the main. Aman can access these attributes using the dot operator. But they *are not accessible to Aman unless they are made public*.
+```cpp
+#include <iostream>
+using namespace std;
+
+class Employee
+{
+public:
+    string eID;
+    string eName;
+    long long int ePhone;
+};
+
+int main()
+{
+    Employee Aman;
+    Aman.eID = "B121006";
+    Aman.eName = "Aman Kumar Gupta";
+    Aman.ePhone = 9983229291;
+    cout << "Employee having ID " << Aman.eID << " is " << Aman.eName << endl;
+    cout << "Employee contact number : " << Aman.ePhone;
+}
+```
+```
+Output
+
+Employee having ID B121006 is Aman Kumar Gupta
+Employee contact number : 9983229291
+```
+
+Class methods are nothing but functions that are defined in a class or belong to a class. Methods belonging to a class are accessed by their objects in the same way that they access attributes. Functions can be defined in two ways so that they belong to a class.
+
+### Defining inside the class
+
+An example that demonstrates defining functions inside classes is
+```cpp
+class Employee
+{
+public:
+    int eID;
+    string eName;
+
+    void printName()
+    {
+        cout << eName << endl;
+    }
+};
+```
+
+### Defining outside the class
+
+Although, a function can be defined outside the class, it needs to be declared inside. Later, we can use the **scope resolution operator (::)** to define the function outside.
+
+An example that demonstrates defining functions outside classes is
+```cpp
+class Employee
+{
+public:
+    int eID;
+    string eName;
+
+    void printName();
+};
+
+void Employee::printName()
+{
+    cout << eName << endl;
+}
+```
 
 <br>
 
