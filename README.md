@@ -44,7 +44,7 @@
     - [C++ OOP Basics](#111-c-oop-basics)
     - [C++ Classes and Objects](#112-c-classes-and-objects)
     - [Class Attributes & Methods](#113-class-attributes--methods)
-    - []
+    - [Objects Memory Allocation](#114-objects-memory-allocation)
 
 # 1. Introduction
 
@@ -1651,7 +1651,7 @@ void Employee::printName()
 
 <br>
 
-## 11.4 Objects Memory Allocation
+## 11.4. Objects Memory Allocation
  
 ### Objects Memory Allocation in C++
 
@@ -1713,8 +1713,8 @@ int Employee::count = 0; //defining the value of count
  
 int main()
 {
-    Employee Harry;
-    Harry.setName("Aman");
+    Employee Aman;
+    Aman.setName("Aman");
     cout << Employee::getCount() << endl;
 }
 ```
@@ -1722,6 +1722,44 @@ int main()
 Output:
 
 1
+```
+
+<br>
+
+## 11.5. Friend Functions & Classes
+ 
+Friend functions are those functions that have the right to access the private data of members of the class even though they are not defined inside the class. It is necessary to write the prototype of the friend function. <br>
+Declaring a friend function inside a class does not make that function a member of the class.
+
+### Properties of Friend Function
+
+- Not in the scope of the class, means it is not a member of the class.
+- Since it is not in the scope of the class, it cannot be called from the object of that class.
+- Can be declared anywhere inside the class, be it under the public or private access modifier, it will not make any difference.
+- It cannot access the members directly by their names, it needs **(object_name.member_name)** to access any member.
+ 
+The syntax for declaring a friend function inside a class is
+```cpp
+class class_name
+{
+    friend return_type function_name(arguments);
+};
+ 
+return_type class_name::function_name(arguments)
+{
+    //body of the function
+}
+```
+### Friend Classes in C++
+
+Friend classes are those classes that have permission to access private members of the class in which they are declared. The main thing to note here is that if the class is made friends of another class then it can access all the private members of that class.
+
+The syntax for declaring a friend class inside a class is
+```cpp
+class class_name
+{
+    friend class friend_class_name;
+};
 ```
 
 <br>
