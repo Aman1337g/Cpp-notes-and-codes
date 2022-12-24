@@ -45,6 +45,10 @@
     - [C++ Classes and Objects](#112-c-classes-and-objects)
     - [Class Attributes & Methods](#113-class-attributes--methods)
     - [Objects Memory Allocation](#114-objects-memory-allocation)
+    - [Friend Functions & Classes](#115-friend-functions--classes)
+    - [C++ Constructors](#116-c-constructors)
+    - [C++ Encapsulation](#117-c-encapsulation)
+    - [C++ Inheritance](#118-c-inheritance)
 
 # 1. Introduction
 
@@ -1863,6 +1867,51 @@ public:
 
 <br>
 
+## 11.7. C++ Encapsulation
+
+> The act of hiding information.
+
+Encapsulation is the first pillar of Object Oriented Programming. It means **wrapping up data attributes and methods together**. The goal is to keep sensitive data hidden from users.<br>
+Encapsulation is considered a good practice where one should always make attributes private for them to become non-modifiable until needed. The data is ultimately more secure as a result of this. Once members are made private, methods to access them or change them should be declared. 
+
+An example of how encapsulation is achieved is
+```cpp
+#include <iostream>
+using namespace std;
+ 
+class class_name
+{
+private:
+    int a;
+ 
+public:
+    void setA(int num)
+    {
+        a = num;
+    }
+ 
+    int getA()
+    {
+        return a;
+    }
+};
+ 
+int main()
+{
+    class_name obj;
+    obj.setA(5);
+    cout << obj.getA() << endl;
+}
+```
+```
+Output:
+
+5
+```
+
+<br>
+
+
 ## 09 - OOP Features
 
 **Overview**
@@ -1877,13 +1926,6 @@ public:
 
 A user is aware of the fact that what a user defined type is capable of doing. Or what are the functionalities attached to that UDT. But not aware of the fact that how these are implemented.<br>
 For example, **stack** as a UDT. We can **push** an element to the stack and **pop** an element from the stack. But the user cannot know how the stack is implemented. A stack may either be implemented with the help of a **linked list** or with an **array**.
-
-**Encapsulation**
-
-> The act of hiding information.
-
-All data access must occur through the public interface. Thus, the data fields of an object are effectively hidden from the user.<br>
-For example, inside a class member, variables are declared as private to restrict the direct access.
 
 **Inheritance**
 
