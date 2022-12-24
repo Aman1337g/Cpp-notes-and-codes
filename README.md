@@ -2046,6 +2046,40 @@ class ClassD : public ClassC
 
 <br>
 
+## 11.9. C++ Access Modifiers
+ 
+### Public Access Modifier in C++
+
+All the variables and functions declared under the public access modifier will be available for everyone. They can be accessed both inside and outside the class. **Dot (.) operator is used in the program to access public data members directly**.
+
+### Private Access Modifier in C++
+
+All the variables and functions declared under a private access modifier **can only be used inside the class**. They are not permissible to be used by any object or function outside the class.
+
+### Protected Access Modifiers in C++
+
+Protected access modifiers are similar to the private access modifiers but protected access modifiers can be accessed in the derived class whereas private access modifiers cannot be accessed in the derived class. 
+
+A table is shown below which shows the behavior of access modifiers when they are derived from public, private, and protected.
+
+||Public derivation|Private Derivation|Protected Derivation|
+|---|---|---|---|
+|**Private members**|Not inherited|Not inherited|Not inherited
+|**Protected Members**|Protected|Private|Protected
+|**Public Members**|Public|Private|Protected
+
+- If the class is inherited in public mode then its private members cannot be inherited in child class.
+- If the class is inherited in public mode then its protected members are protected and can be accessed in child class.
+- If the class is inherited in public mode then its public members are public and can be accessed inside the child class and outside the class.
+- If the class is inherited in private mode then its private members cannot be inherited in child class.
+- If the class is inherited in private mode then its protected members are private and cannot be accessed in child class.
+- If the class is inherited in private mode then its public members are private and cannot be accessed in child class.
+- If the class is inherited in protected mode then its private members cannot be inherited in child class.
+- If the class is inherited in protected mode then its protected members are protected and can be accessed in the child class.
+- If the class is inherited in protected mode then its public members are protected and can be accessed in the child class.
+
+<br>
+
 ## 09 - OOP Features
 
 **Overview**
