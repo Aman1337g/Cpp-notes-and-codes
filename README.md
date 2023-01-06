@@ -2103,7 +2103,7 @@ This is a feature that lets us define operators working for some specific tasks.
 
 ### Run Time Polymorphism
 
-With run-time polymorphism, the compiler has no idea what will happen when the code is executed. Run time polymorphism is also called late binding. The run-time polymorphism is considered slow because function calls are decided at run time. Run time polymorphism can be achieved from virtual functions.
+With run-time polymorphism, the compiler has no idea what will happen when the code is executed. Run time polymorphism is also called **late binding**. The run-time polymorphism is considered slow because function calls are decided at run time. Run time polymorphism can be achieved from virtual functions.
 
 ### Virtual Functions in C++
 
