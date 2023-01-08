@@ -459,3 +459,405 @@ void someFunction() throw (SomeExceptionType) {
 This means that the **someFunction()** function may throw an exception of type SomeExceptionType. The caller of the function will need to use a try-catch block to handle this exception.
 
 <br>
+
+**2 (a)**
+
+Code :
+```cpp
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+class Sphere
+{
+protected:
+    double radius;
+
+public:
+    void setR()
+    {
+        cout << "Enter radius of the sphere : ";
+        cin >> radius;
+    }
+    void volD()
+    {
+        double volume = (4.0 / 3.0) * 3.14 * pow(radius, 3);
+        cout << "Volume of the sphere with radius " << radius << " units is : " << volume << " cubic units.";
+    }
+};
+
+int main()
+{
+    Sphere s1;
+    s1.setR();
+    s1.volD();
+
+    return 0;
+}
+```
+```
+Output
+
+Enter radius of the sphere : 4.23
+Volume of the sphere with radius 4.23 units is : 316.876 cubic units.
+```
+
+**2 (b)**
+
+Code :
+```cpp
+#include <iostream>
+using namespace std;
+
+class Student
+{
+private:
+    string stud_name;
+    int stud_id;
+    float stud_mark;
+
+public:
+    Student(int id, string name, float mark)
+    {
+        stud_id = id;
+        stud_name = name;
+        stud_mark = mark;
+    }
+    void display()
+    {
+        cout << "Student ID : " << stud_id << endl
+             << "Name : " << stud_name << endl
+             << "Mark : " << stud_mark << endl
+             << endl;
+    }
+};
+
+int main()
+{
+    Student s1(01, "Abhisek Gupta", 89);
+    s1.display();
+
+    Student s2(02, "Abhishek Upadhaya", 95.5);
+    s2.display();
+
+    return 0;
+}
+```
+```
+OUTPUT
+
+Student ID : 1
+Name : Abhisek Gupta
+Mark : 89
+
+Student ID : 2
+Name : Abhishek Upadhaya
+Mark : 95.5
+
+
+```
+
+**3 (a)**
+
+Function overloading is a feature in C++ that allows a single function to have multiple definitions with different signatures. The signature of a function is determined by its name and the number, types, and order of its parameters.
+
+There are several ways to overload a function in C++:
+
+1. **By number of parameters:** We can have multiple versions of a function with a different number of parameters. For example:
+```cpp
+int sum(int a, int b) {
+    return a + b;
+}
+
+int sum(int a, int b, int c) {
+    return a + b + c;
+}
+```
+Here, the ```sum()``` function is overloaded with two definitions: one that takes two ```int``` parameters and one that takes three ```int``` parameters.
+
+2. **By type of parameters:** We can have multiple versions of a function with different types of parameters. For example:
+```cpp
+int sum(int a, int b) {
+    return a + b;
+}
+
+float sum(float a, float b) {
+    return a + b;
+}
+```
+Here, the ```sum()``` function is overloaded with two definitions: one that takes two ```int``` parameters and one that takes two ```float``` parameters.
+
+3. **By order of parameters:** We can have multiple versions of a function with a different order of parameters, ```as long as the types are different```. For example:
+```cpp
+float sum(int a, float b) {
+    return a + b;
+}
+
+float sum(float a, int b) {
+    return a + b;
+}
+```
+Here, the ```sum()``` function is overloaded with two definitions: one that takes one ```int``` and one ```float``` parameter in the ```order (int, float)``` and one that takes one ```int``` and one ```float``` parameter in the ```order (float, int)```.
+
+> Note that overloading a function based solely on the order of the parameters is generally considered bad practice, as it can lead to confusion and make the code harder to understand.
+
+It is important to note that function overloading is only allowed if the different versions of the function have different signatures. This means that we cannot overload a function based on the return type or the names of the parameters.
+
+**3 (b)**
+
+Code :
+```cpp
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+class Triangle
+{
+protected:
+    double a, b, c;
+
+public:
+    Triangle(double d, double e, double f) : a(d), b(e), c(f) {}
+
+    void area(double x, double y) { cout << "Area of the triangle with sides " << x << " unit and " << y << " unit is " << 0.5 * x * y << " sq. units"; }
+    void area(double x, double y, double z)
+    {
+        double s = (x + y + z) / 2.0;
+        double q = s * (s - a) * (s - b) * (s - c);
+        double ar = pow(q, 0.5);
+        cout << "Area of the triangle with sides " << x << ", " << y << ", " << z << " units is " << ar << " sq. units";
+    }
+
+    void check_and_display()
+    {
+        double d, e, f;
+        d = a;
+        e = b;
+        f = c;
+        if (d < e + f && e < d + f && f < d + e)
+        {
+            if (d * d == e * e + f * f)
+            {
+                cout << "Triangle is right !!" << endl;
+                area(e, f);
+            }
+            else if (e * e == d * d + f * f)
+            {
+                cout << "Triangle is right !!" << endl;
+                area(d, f);
+            }
+            else if (f * f == e * e + d * d)
+            {
+                cout << "Triangle is right !!" << endl;
+                area(e, d);
+            }
+            else
+            {
+                cout << "Triangle is not right angled !!" << endl;
+                area(d, e, f);
+            }
+        }
+        else
+            cout << "Invalid Triangle !!";
+    }
+};
+
+int main()
+{
+    double a, b, c;
+    cout << "Enter side1 : ";
+    cin >> a;
+    cout << "Enter side2 : ";
+    cin >> b;
+    cout << "Enter side3 : ";
+    cin >> c;
+
+    Triangle t1(a, b, c);
+    t1.check_and_display();
+
+    return 0;
+}
+```
+```
+OUTPUT
+
+Enter side1 : 5
+Enter side2 : 6
+Enter side3 : 7
+Triangle is not right angled !!
+Area of the triangle with sides 5, 6, 7 units is 14.6969 sq. units
+```
+
+**4 (a)**
+
+In C++, inheritance is a mechanism that allows one class (called the derived class) to inherit the properties and methods of another class (called the base class). Inheritance is a way to create a new class that is a modified version of an existing class, without having to rewrite the existing class.
+
+Here is an example of inheritance in C++:
+```cpp
+#include <iostream>
+using namespace std;
+// Base class
+class Shape
+{
+protected:
+    int width, height;
+
+public:
+    void setWidth(int w)
+    {
+        width = w;
+    }
+    void setHeight(int h)
+    {
+        height = h;
+    }
+};
+
+// Derived class
+class Rectangle : public Shape
+{
+public:
+    int getArea()
+    {
+        return width * height;
+    }
+};
+
+int main()
+{
+    Rectangle rect;
+
+    rect.setWidth(5);
+    rect.setHeight(7);
+
+    // Print the area of the rectangle
+    cout << "The area of the rectangle is: " << rect.getArea();
+    return 0;
+}
+```
+``` 
+OUTPUT
+
+The area of the rectangle is: 35
+```
+In this example, the ```Rectangle``` class is derived from the ```Shape``` class. This means that the ```Rectangle``` class inherits the ```setWidth()``` and ```setHeight()``` methods of the Shape class. The Rectangle class also has its own method, ```getArea()```, which calculates area of the rectangle.
+
+**Multilevel inheritance** is a type of inheritance in which a derived class is derived from another derived class. This means that the derived class inherits the properties and methods of the base class, as well as the properties and methods of the intermediate derived class.
+
+Here is an example of multilevel inheritance in C++:
+```cpp
+#include <iostream>
+using namespace std;
+
+class A
+{
+public:
+    int a;
+    void seta(int x) { a = x; }
+};
+class B : public A
+{
+public:
+    int b;
+    void setb(int x) { b = x; }
+};
+class C : public B
+{
+public:
+    int c;
+    void setc(int x) { c = x; }
+    int sum()
+    {
+        return a + b + c;
+    }
+};
+
+int main()
+{
+    C test;
+    test.seta(1);
+    test.setb(2);
+    test.setc(3);
+    cout << "Sum : " << test.sum();
+
+    return 0;
+}
+```
+```
+OUTPUT
+
+Sum : 6
+```
+In this example, ```C``` class is derived from the ```B``` class, which is derived from the ```A``` class. This means that the ```C``` class, inherits the ```seta()``` and ```setb()``` methods of the ```A``` class, as well as the B class respectively. The ```C``` class also has its own mehtods ```setc()``` to set the integer variable c and ```sum()```, returns the sum a+b+c.
+
+**4 (b)**
+
+In C++, ambiguity can occur in multipath (diamond) inheritance when a derived class has multiple copies of the same attribute due to inheritance from multiple base classes. This can be resolved using a **virtual base class**.
+
+A **virtual base class** is a base class that is **inherited virtually, meaning that only one copy of the base class is inherited by the derived class**, even if the derived class is inherited from multiple base classes that have the virtual base class in their inheritance hierarchy.
+
+Here is an example of how to use a virtual base class to resolve ambiguity in multipath inheritance:
+
+```cpp
+#include <iostream>
+using namespace std;
+
+// virtual base class
+class A
+{
+protected:
+    int a;
+
+public:
+    void setA(int x) { a = x; }
+};
+
+// Base class 1
+class B : virtual public A
+{
+protected:
+    int b;
+
+public:
+    void setB(int x) { b = x; }
+};
+// Base class 2
+class C : virtual public A
+{
+protected:
+    int c;
+
+public:
+    void setC(int x) { c = x; }
+};
+// Derived class
+class Derived : public B, public C
+{
+protected:
+    int d;
+
+public:
+    void sum()
+    {
+        d = a + b + c;
+        cout << "The sum of a, b, c is : " << d << endl;
+    }
+};
+int main()
+{
+    Derived d1;
+    d1.setA(1);
+    d1.setB(2);
+    d1.setC(3);
+    d1.sum();
+
+    return 0;
+}
+```
+```
+OUTPUT
+
+The sum of a, b, c is : 6
+
+```
+In this example, ```Derived``` class is derived from the ```B``` and ```C``` classes, which are both derived from the virtual base class ```A```. This means there is only one copy of the attribute of ```A``` class is inherited by the ```Derived``` class.
