@@ -438,7 +438,7 @@ error: assignment of read-only variable 'PI'
 
 ## 2.3. C++ Manipulators
 
-In C++ programming, language manipulators are **used in the formatting of output**. These are helpful in modifying the input and the output stream. They make use of the insertion and extraction operators to modify the output.<br>
+In C++ programming language, manipulators are **used in the formatting of output**. These are helpful in modifying the input and the output stream. They make use of the insertion and extraction operators to modify the output.<br>
 Here’s a list of a few manipulators:
 
 |Manipulators|Description|
@@ -452,25 +452,27 @@ Let’s see their implementation in C++. Note that we use the header file **ioma
 ```cpp
 #include <iostream>
 #include <iomanip>
+#include <cmath>
 using namespace std;
- 
+
 int main()
 {
     float PI = 3.14;
     int num = 100;
     cout << "Entering a new line." << endl;
     cout << setw(10) << "Output" << endl;
-    cout << setprecision(10) << PI << endl;
-    cout << setbase(16) << num << endl; //sets base to 16
+    cout << setprecision(5) << M_PI << endl;
+    cout << setbase(16) << num << endl; // sets base to 16
 }
 ```
 ```
-Output:
+OUTPUT
 
 Entering a new line.
     Output
-3.140000105
+3.1416
 64
+
 ```
 
 <br>
