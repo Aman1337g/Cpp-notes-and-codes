@@ -1,4 +1,5 @@
-## <center>**3rd Semster 2014**</center>
+## <center>**3rd Semester 2014**</center>
+## <center>**Branch - CSE/IT**</center>
 
 **Ans 1. 
 (a)**
@@ -9,7 +10,7 @@
 - Compile-time polymorphism
 - Run time polymorphism
  
-### Compile Time Polymorphism
+### Compile Time Po lymorphism
 
 In compile-time polymorphism, it is **already known which function will run.** Compile-time polymorphism is also called **early binding**, which means that you are already bound to the function call and you know that this function is going to run.
 
@@ -1237,3 +1238,114 @@ Enter array : 23 3 445 23 2
 Entered array : 23 3 445 23 2
 Array in desceding order : 445 23 23 3 2
 ```
+
+<br>
+
+## <center>**3rd Semester 2014**</center>
+## <center>**Branch - EEE**</center>
+
+**1 (a)**
+
+1. **Encapsulation:** Hiding internal data and behavior, and exposing a public interface.
+2. **Inheritance:** Ability to inherit characteristics and behavior from parent objects.
+3. **Polymorphism:** Ability to take on multiple forms depending on the context.
+4. **Abstraction:** Defining objects in terms of their characteristics and behavior, rather than implementation details.
+5. **Classes and objects:** OOP is based on the concept of classes and objects.
+6. **Data and methods:** objects have attributes (data) and behavior (methods).
+7. **Reusability and code organization**.
+8. **Dynamic binding and message passing**.
+9. **Modularity, extensibility, maintainability and scalability**.
+
+**1 (b)**
+
+**Encapsulation** is a concept in object-oriented programming where an object's internal state is hidden from the outside world and can only be accessed or modified through a defined set of methods or interfaces. This allows for greater control over how an object's state is accessed and modified, and can help to reduce the likelihood of bugs or other issues arising from unintended changes to an object's state.
+
+**1 (c)**
+
+In C++ , the ```"this"``` pointer refers to the current object. It is a hidden pointer that is automatically passed to non-static member functions, and it points to the memory address of the object on which the member function is being called. The ```"this"``` pointer can be used within a member function to refer to the object's own member variables and member functions. It can also be used to pass the object's address to other functions. The ```"this"``` pointer is typically only used within the body of a non-static member function, and it is not possible to take the address of the ```"this"``` pointer.
+
+**1 (d)**
+
+```cpp
+#include <iostream>
+using namespace std;
+main()
+{
+    int c[] = {2.8, 3.4, 4, 6.7, 5};
+    int j, *p = c, *q = c;
+    for (j = 0; j < 5; j++)
+    {
+        printf(" %d ", *c);
+        ++q;
+    }
+    for (j = 0; j < 5; j++)
+    {
+        printf(" %d ", *p);
+        ++p;
+    }
+}
+```
+```
+OUTPUT
+
+asehi.cpp: In function 'int main()':
+asehi.cpp:5:35: error: narrowing conversion of '2.7999999999999998e+0' from 'double' to 'int' inside { } [-Wnarrowing]
+     int c[] = {2.8, 3.4, 4, 6.7, 5};
+                                   ^
+asehi.cpp:5:35: error: narrowing conversion of '3.3999999999999999e+0' from 'double' to 'int' inside { } [-Wnarrowing]
+asehi.cpp:5:35: error: narrowing conversion of '6.7000000000000002e+0' from 'double' to 'int' inside { } [-Wnarrowing]
+```
+
+**1 (e)**
+```cpp
+#include <iostream>
+using namespace std;
+
+class Stocks
+{
+    int number;
+
+public:
+    static void picker()
+    {
+        number = 6;
+    }
+    int get_data()
+    {
+        return number;
+    }
+};
+
+int main()
+{
+    Stocks ob;
+    ob.picker();
+    ob.get_data();
+    return 0;
+}
+```
+```
+OUTPUT
+
+asehi.cpp: In static member function 'static void Stocks::picker()':
+asehi.cpp:11:9: error: invalid use of member 'Stocks::number' in static member function
+         number = 6;
+         ^~~~~~
+asehi.cpp:6:9: note: declared here
+     int number;
+         ^~~~~~`
+```
+
+**1 (f)**
+
+Binary files and text files are different in several ways:
+
+1. **Format:** Binary files store data in a binary format, whereas text files store data in a plain text format.
+2. **Encoding:** Binary files do not have any encoding, whereas text files are encoded using a specific character encoding such as UTF-8 or ASCII.
+3. **Size:** Binary files are usually larger in size than text files because they store data in a non-compressed format.
+4. **File extension:** Binary files generally have different file extensions than text files. Examples of binary file extensions include .exe, .dll, .jpg, and .mp3, while examples of text file extensions include .txt, .html, and .css.
+5. **Data type:** Binary files can store any type of data, including images, audio, and executable code, while text files can store only plain text.
+6. **Editing:** Binary files can not be edited or viewed directly, whereas text files can be easily opened, viewed and edited using a text editor.
+7. **Compatibility:** Binary files are not compatible with all operating systems and devices, whereas text files are more widely compatible.
+
+In summary, binary files are used for storing non-textual data in a compact format, while text files are used for storing plain text in a human-readable format.
