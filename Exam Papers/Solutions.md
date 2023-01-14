@@ -1349,3 +1349,114 @@ Binary files and text files are different in several ways:
 7. **Compatibility:** Binary files are not compatible with all operating systems and devices, whereas text files are more widely compatible.
 
 In summary, binary files are used for storing non-textual data in a compact format, while text files are used for storing plain text in a human-readable format.
+
+**1 (g)**
+
+The syntax for the new operator in C++ is:
+
+```cpp
+pointer_variable = new data_type;
+```
+or
+```cpp
+pointer_variable = new data_type(constructor_arguments);
+```
+For example:
+```cpp
+int* ptr = new int;
+```
+or
+```cpp
+int* ptr = new int(5);
+```
+The syntax for the delete operator in C++ is:
+```cpp
+delete pointer_variable;
+```
+For example:
+```cpp
+delete ptr;
+```
+It's important to use the delete operator to deallocate the memory allocated by the new operator, to avoid memory leaks and undefined behavior.
+
+**1 (h)**
+
+A constructor is a special member function of a class that is executed whenever an object of that class is created. It has the same name as the class and is used to initialize the member variables of the class and allocate any necessary resources.
+
+The main role of a constructor is to provide a way to set up the initial state of an object. For example, when an object of a class representing a bank account is created, the constructor would be used to initialize the account balance to a default value.
+
+Here's an example of a simple class ```Rectangle``` with a constructor:
+```cpp
+class Rectangle {
+    public:
+        int length, width;
+        Rectangle(int l, int w) {
+            length = l;
+            width = w;
+        }
+};
+```
+Here ```Rectangle(int l, int w)``` is the constructor which takes two argument of int type.
+
+You can create the object of the class by using the constructor :
+```cpp
+Rectangle rect(10, 5);
+```
+In this case, the constructor ```Rectangle(10, 5)``` is called and the member variables ```length``` and ```width``` are initialized to ```10``` and ```5```, respectively.
+
+C++ also provides a default constructor which is a constructor with no parameter, if there is no constructor defined in the class, the compiler will automatically provide a default constructor.
+
+In addition, C++11 onwards have added the feature of "default" and "deleted" constructor.
+
+**1 (h)**
+```cpp
+#include <iostream>
+using namespace std;
+int a = 25;
+int main()
+{
+    int a = 45;
+    {
+        int a = 10;
+        cout << a << " " << ::a << " ";
+    }
+    cout << ::a << " " << a;
+}
+```
+```
+OUTPUT
+
+10 25 25 45
+```
+
+**1 (j)**
+
+A pure virtual function (also known as an abstract function) is a virtual function that has no implementation in the base class. It is defined by placing the keyword "virtual" before the return type in the function declaration, followed by the assignment of ```= 0```.
+
+A class that contains at least one pure virtual function is called an abstract class. Abstract classes cannot be instantiated and are usually used as base classes for other classes.
+
+Here's an example of a pure virtual function in a class ```Shape```:
+```cpp
+class Shape {
+    public:
+        virtual double getArea() = 0;
+};
+```
+In this example, the ```getArea()``` function is a pure virtual function because it has no implementation in the ```Shape``` class and is assigned = 0.
+
+A derived class of ```Shape``` will need to define the ```getArea()``` function to provide an implementation of the function.
+```cpp
+class Square : public Shape {
+    public:
+        double getArea() {
+            return side * side;
+        }
+    private:
+        double side;
+};
+```
+In this example, the ```Square``` class is derived from the ```Shape``` class and provides an implementation for the ```getArea()``` function, so that an object of the ```Square``` class can be instantiated and ```getArea()``` can be called on it.
+
+Pure virtual functions are used to create interface classes that define a set of methods that derived classes must implement.
+
+<br>
