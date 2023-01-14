@@ -1408,7 +1408,7 @@ C++ also provides a default constructor which is a constructor with no parameter
 
 In addition, C++11 onwards have added the feature of "default" and "deleted" constructor.
 
-**1 (h)**
+**1 (i)**
 ```cpp
 #include <iostream>
 using namespace std;
