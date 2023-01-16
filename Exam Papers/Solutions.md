@@ -1,5 +1,5 @@
-## <center>**3rd Semester 2014**</center>
-## <center>**Branch - CSE/IT**</center>
+## <h1 align = "center">**3rd Semester 2014**</h1>
+## <h2 align = "center">**Branch - CSE/IT**</h2>
 
 **Ans 1. 
 (a)**
@@ -12,7 +12,7 @@
  
 ### Compile Time Po lymorphism
 
-In compile-time polymorphism, it is **already known which function will run.** Compile-time polymorphism is also called **early binding**, which means that you are already bound to the function call and you know that this function is going to run.
+In compile-time polymorphism, it is **already known which function will run.** Compile-time polymorphism is also called **early binding**, which means that we are already bound to the function call and we know that this function is going to run.
 
 There are two types of compile-time polymorphism:
 
@@ -1241,8 +1241,8 @@ Array in desceding order : 445 23 23 3 2
 
 <br>
 
-## <center>**3rd Semester 2014**</center>
-## <center>**Branch - EEE**</center>
+## <h1 align = "center">**3rd Semester 2014**</h1>
+## <h2 align = "center">**Branch - EEE**</h2>
 
 **1 (a)**
 
@@ -1458,5 +1458,117 @@ class Square : public Shape {
 In this example, the ```Square``` class is derived from the ```Shape``` class and provides an implementation for the ```getArea()``` function, so that an object of the ```Square``` class can be instantiated and ```getArea()``` can be called on it.
 
 Pure virtual functions are used to create interface classes that define a set of methods that derived classes must implement.
+
+<br>
+
+**2 (a)**
+
+Code : 
+```cpp
+#include <iostream>
+using namespace std;
+
+class Time
+{
+    int hours, minutes, seconds;
+
+public:
+    Time() { hours = 0, minutes = 0, seconds = 0; }
+    Time(int a, int b, int c) { hours = a, minutes = b, seconds = c; }
+    void add_time(Time ob1, Time ob2)
+    {
+        hours = ob1.hours + ob2.hours;
+        minutes = ob1.minutes + ob2.minutes;
+        seconds = ob1.seconds + ob2.seconds;
+    }
+    void display_time()
+    {
+        while (seconds > 60)
+        {
+            seconds -= 60;
+            minutes++;
+        }
+        while (minutes > 60)
+        {
+            minutes -= 60;
+            hours++;
+        }
+        cout << hours << ":" << minutes << ":" << seconds;
+    }
+};
+int main()
+{
+    Time T1(1, 2, 60);
+    Time T2(5, 6, 61);
+    Time T3;
+    T3.add_time(T1, T2);
+    cout << "After Adding time from  object1 :: ";
+    T1.display_time();
+    cout << " and object2 :: ";
+    T2.display_time();
+    cout << "\nResult = ";
+    T3.display_time();
+
+    return 0;
+}
+```
+```
+OUTPUT
+After Adding time from  object1 :: 1:2:60 and object2 :: 5:7:1
+Result = 6:10:1
+```
+
+**2 (b)**
+
+In C++, a function can be defined with default arguments, which are values that are automatically assigned to the function's parameters if no value is provided for them when the function is called. This allows the caller of the function to omit certain arguments when they are not needed, while still maintaining a default behavior for those arguments.
+
+Here is an example of a simple program that illustrates this concept:
+```cpp
+#include <iostream>
+
+void printMessage(std::string message, int times = 1) {
+    for (int i = 0; i < times; i++) {
+        std::cout << message << std::endl;
+    }
+}
+
+int main() {
+    printMessage("Hello, World!");  // Prints "Hello, World!" once
+    printMessage("Hello, World!", 3);  // Prints "Hello, World!" three times
+    return 0;
+}
+```
+In this program, the ```printMessage``` function is defined with two parameters: a ```message``` of type ```std::string``` and a times of type ```int```. The ```times``` parameter is given a default value of 1, so if the caller of the function doesn't provide a value for this parameter, the function will assume it should be ```1```.
+
+In the main function, ```printMessage``` is called twice: once with only one argument, and once with two. The first call uses the default value of ```times``` and prints the message once. The second call provides a value of ```3``` for ```times``` and prints the message three times.
+
+**3 (a)**
+
+Operator overloading is a feature in C++ that allows programmers to redefine the behavior of operators (such as +, -, *, etc.) for user-defined types. This means that the same operator can have different meanings depending on the types of its operands. For example, the + operator typically performs arithmetic addition when used with numbers, but it can be overloaded to concatenate strings when used with **std::string** objects.
+
+To overload an operator in C++, you define a special function called an "operator function" that has the keyword ```operator``` followed by the operator symbol. These operator functions are then used to overload the corresponding operator.
+
+Here is an example of overloading the + operator for a user-defined class ```MyNumber```:
+```cpp
+class MyNumber {
+  public:
+    int value;
+    MyNumber(int val): value(val) {}
+    MyNumber operator+(const MyNumber &other) {
+      return MyNumber(value + other.value);
+    }
+};
+```
+In this example, the ```MyNumber``` class has a single member variable ```value``` and a constructor that initializes it. The ```operator+``` function is defined as a member function of the class, which takes another ```MyNumber``` object as an argument and returns a new ```MyNumber``` object that has the sum of the two values.
+
+Once this is done, we can use the ```+``` operator to add ```MyNumber``` objects just like we would with primitive types.
+```cpp
+MyNumber a(5), b(10);
+MyNumber c = a + b;
+std::cout << c.value << std::endl;
+```
+This will output "15" on the console.
+
+It's worth noting that not all operators can be overloaded and some have restrictions on how they can be overloaded. Also, overloading some operators can lead to unexpected behavior for the users of the class, so it should be done with care.
 
 <br>
