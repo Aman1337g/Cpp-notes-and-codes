@@ -1572,3 +1572,146 @@ This will output "15" on the console.
 It's worth noting that not all operators can be overloaded and some have restrictions on how they can be overloaded. Also, overloading some operators can lead to unexpected behavior for the users of the class, so it should be done with care.
 
 <br>
+
+## <h1 align = "center">**3rd Semester 2016**</h1>
+## <h2 align = "center">**Branch - IT**</h2>
+
+**1 (a)**
+
+The key idea behind object-oriented programming (OOP) is the concept of objects, which are instances of a class. A class is a blueprint for creating objects, and it defines the properties and methods that the objects created from it will have. OOP also emphasizes the concepts of encapsulation, inheritance, and polymorphism. Encapsulation refers to the idea of hiding the internal details of an object and only exposing a public interface. Inheritance allows classes to inherit properties and methods from parent classes, and polymorphism allows objects of different classes to be treated as objects of a common parent class.
+
+**1 (b)**
+
+```cpp
+#include <iostream>
+using namespace std;
+class Stocks
+{
+    int number;
+
+public:
+    static void picker()
+    {
+        number = 6;
+    }
+    int get_data()
+    {
+        return number;
+    }
+};
+int main()
+{
+    Stocks ob;
+    ob.picker();
+    cout << ob.get_data();
+    return 0;
+}
+```
+```
+OUTPUT
+
+asehi.cpp: In static member function 'static void Stocks::picker()':
+asehi.cpp:10:9: error: invalid use of member 'Stocks::number' in static member function
+         number = 6;
+         ^~~~~~
+asehi.cpp:5:9: note: declared here
+     int number;
+         ^~~~~~
+```
+
+**1 (c)**
+
+```cpp
+#include <iostream>
+int main(int argc, char **argv)
+{
+    int *b, *y;
+    b = new int[10];
+    for (int i = 0; i < 5; i++)
+    {
+        std::cout << "We are here\n";
+        b[2, 3 * 2, 5] = 13;
+        y = b;
+        delete[] y;
+    }
+}
+```
+```
+OUTPUT
+
+We are here
+We are here
+We are here
+We are here
+We are here
+``` 
+
+**1 (d)**
+
+Object slicing refers to a phenomenon that occurs in C++ when an object of a derived class is assigned to a variable of a base class. When this happens, the derived class object is "sliced" and only the properties and methods of the base class are retained. Any properties or methods that are specific to the derived class are lost.
+
+For example, consider the following code:
+```cpp
+class Shape {
+public:
+    int x, y;
+};
+
+class Circle : public Shape {
+public:
+    int radius;
+};
+
+int main() {
+    Circle c;
+    c.x = 10;
+    c.y = 20;
+    c.radius = 5;
+
+    Shape s = c; // object slicing occurs here
+
+    cout << s.x << ", " << s.y << endl; // prints "10, 20"
+    cout << s.radius << endl; // This will not work, because s is only a Shape, which don't have radius variable
+    return 0;
+}
+```
+In this example, we have a base class ```Shape``` and a derived class ```Circle``` that inherits from ```Shape```. We create an object of the ```Circle``` class and assign it to a variable of the ```Shape``` class. When this happens, the ```Circle``` object is "sliced" and only the properties and methods of the ```Shape``` class are retained. The ```radius``` variable of the ```Circle``` class is lost, and any attempt to access it using the ```Shape``` variable will result in an error.
+
+To prevent object slicing and retain the properties of the derived class, you can use pointers or references of base class instead of objects.
+```cpp
+Shape &s = c;
+```
+This will prevent slicing and we can access radius variable as well.
+
+**1 (e)**
+
+A virtual base class is a mechanism in C++ that allows a derived class to inherit from a base class multiple times, without having multiple copies of the base class's data members. This is useful in cases where multiple paths of inheritance lead to the same base class. Without virtual base classes, each path of inheritance would create a separate copy of the base class's data members, leading to ambiguity and potential memory waste.
+
+For example, consider the following code:
+```cpp
+class Shape {
+public:
+    int x, y;
+};
+
+class Rectangle: virtual public Shape {
+public:
+    int width, height;
+};
+
+class Circle: virtual public Shape {
+public:
+    int radius;
+};
+
+class Ellipse: public Rectangle, public Circle {
+};
+```
+In this example, the ```Ellipse``` class inherits from both ```Rectangle``` and ```Circle```, which in turn inherit from the ```Shape``` class. Without using virtual base class, each path of inheritance would create a separate copy of the ```Shape``` class's data members (x and y) in the ```Ellipse``` class, causing ambiguity and memory waste.
+
+By using virtual base class, only one copy of the ```Shape``` class's data members is created in the ```Ellipse``` class, avoiding ambiguity and memory waste. Also, it allows the class to access the ```Shape``` class's data members via any base class, Rectangle or Circle. This way, it prevents the ambiguity, known as Diamond problem and also makes the memory usage efficient.
+
+It is important to note that virtual base classes are used only when the derived class inherits from the same base class through multiple paths. If the derived class inherits from the base class through only one path, then it is not necessary to use virtual base classes.
+
+<br>
+
