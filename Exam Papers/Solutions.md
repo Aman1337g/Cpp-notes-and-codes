@@ -1714,4 +1714,3 @@ By using virtual base class, only one copy of the ```Shape``` class's data membe
 It is important to note that virtual base classes are used only when the derived class inherits from the same base class through multiple paths. If the derived class inherits from the base class through only one path, then it is not necessary to use virtual base classes.
 
 <br>
-
