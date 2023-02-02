@@ -1,4 +1,4 @@
-S## TABLE OF CONTENTS
+## TABLE OF CONTENTS
 
 1. Introduction
     - [C++ Overview](#11-c-overview)
