@@ -2477,3 +2477,5 @@ Sometimes it’s essential to include several diverse header files based on the 
 
 - ```#include<bits/stdc++.h>```: It contains all standard library of the header files mentioned above. So if you include it in your code, then you need not have to include any other standard header files. But as it is a non-standard header file of GNU C++ library, so, if you try to compile your code with some compiler other than GCC it might fail; e.g. MSVC do not have this header. (See [this](https://www.geeksforgeeks.org/bitsstdc-h-c/) article for more reference)
 
+
+
